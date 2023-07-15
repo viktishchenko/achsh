@@ -6,5 +6,5 @@ export interface IProducts {
   description: string;
   price: number;
   starRating: number;
-  imageUrl: 'assets/images/leaf_rake.png';
+  imageUrl: string;
 }

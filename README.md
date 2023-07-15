@@ -22,4 +22,24 @@ npm i bootstrap
 npm i bootstrap-icons
 ```
 
+![Alt text](test1/src/readmeAssets/add-navbar.png)
+
+</details>
+
+<details>
+
+<summary>ep2</summary>
+
+- add ...
+
+```js
+// add component
+ng g c views/products/product-list --skip-tests --dry-run
+
+// add service
+ng g s services/products --skip-tests --dry-run
+```
+
+![Alt text](test1/src/readmeAssets/add-mock&css.png)
+
 </details>
