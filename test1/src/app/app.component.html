@@ -1,9 +1,14 @@
-<div class="container">
-  <h1>
-    {{ "hello, world!" | titlecase }}
-  </h1>
-  <button class="btn btn-primary">
-    <i class="bi bi-5-circle"></i>
-    start
-  </button>
-</div>
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand">{{ pageTitle | titlecase }}</a>
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container">content</div>
