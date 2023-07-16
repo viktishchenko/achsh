@@ -88,3 +88,17 @@ export class ConvertToSpacePipe implements PipeTransform {
 ![Alt text](test1/src/readmeAssets/filter-logic.png)
 
 </details>
+
+<details>
+
+<summary>ep3</summary>
+
+- [add rating component →](test1/src/app/shared/stars.component.ts)
+
+```js
+ng g c shared/stars --flat --skip-tests --inline-template --inline-style --dry-run
+```
+
+![Alt text](test1/src/readmeAssets/rating-component.png)
+
+</details>
