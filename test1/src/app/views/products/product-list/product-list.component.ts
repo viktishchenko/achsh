@@ -8,6 +8,8 @@ import { IProducts } from 'src/app/models/products';
 })
 export class ProductListComponent {
   pageTitle: string = 'Product list';
+  imageWidth: number = 50;
+  imageMargin: number = 2;
   products: IProducts[] = [
     {
       productId: 1,

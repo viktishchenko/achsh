@@ -42,4 +42,8 @@ ng g s services/products --skip-tests --dry-run
 
 ![Alt text](test1/src/readmeAssets/add-mock&css.png)
 
+- property style binding
+
+![Alt text](test1/src/readmeAssets/style-binding.png)
+
 </details>
