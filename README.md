@@ -46,4 +46,8 @@ ng g s services/products --skip-tests --dry-run
 
 ![Alt text](test1/src/readmeAssets/style-binding.png)
 
+- change detection
+
+![Alt text](test1/src/readmeAssets/change-detection.png)
+
 </details>
