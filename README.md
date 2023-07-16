@@ -50,4 +50,8 @@ ng g s services/products --skip-tests --dry-run
 
 ![Alt text](test1/src/readmeAssets/change-detection.png)
 
+- two way binding
+
+![Alt text](test1/src/readmeAssets/twoWayBinding.png)
+
 </details>
