@@ -71,4 +71,16 @@ export class ConvertToSpacePipe implements PipeTransform {
 }
 ```
 
+- init filter with getter & setter
+
+```js
+  private _listFilter: string = '';
+  get listFilter() {
+    return this._listFilter;
+  }
+  set listFilter(value: string) {
+    this._listFilter = value;
+  }
+```
+
 </details>
