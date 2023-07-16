@@ -101,4 +101,7 @@ ng g c shared/stars --flat --skip-tests --inline-template --inline-style --dry-r
 
 ![Alt text](test1/src/readmeAssets/rating-component.png)
 
+- Passing Data to a Nested Component (@Input)
+- Emitting an Event (@Output)
+
 </details>

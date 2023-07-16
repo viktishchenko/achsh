@@ -60,4 +60,8 @@ export class ProductListComponent implements OnInit {
   toggleImage(): void {
     this.showImage = !this.showImage;
   }
+
+  sendData(data: number) {
+    console.log(`Sending data to parent component: ${data}`);
+  }
 }
