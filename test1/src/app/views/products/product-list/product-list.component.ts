@@ -18,6 +18,7 @@ export class ProductListComponent implements OnInit {
   }
   set listFilter(value: string) {
     this._listFilter = value;
+    this.filteredProducts = this.performFilter(value);
   }
 
   products: IProducts[] = [
@@ -43,8 +44,17 @@ export class ProductListComponent implements OnInit {
     },
   ];
 
+  filteredProducts: IProducts[] = [];
+
+  performFilter(value: string): IProducts[] {
+    value = value.toLocaleLowerCase();
+    return this.products.filter((product: IProducts) => {
+      return product.productName.toLocaleLowerCase().includes(value);
+    });
+  }
+
   ngOnInit(): void {
-    this.listFilter = 'cart';
+    this.listFilter = '';
   }
 
   toggleImage(): void {

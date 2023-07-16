@@ -83,4 +83,8 @@ export class ConvertToSpacePipe implements PipeTransform {
   }
 ```
 
+- add filter
+
+![Alt text](test1/src/readmeAssets/filter-logic.png)
+
 </details>
