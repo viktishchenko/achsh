@@ -54,4 +54,21 @@ ng g s services/products --skip-tests --dry-run
 
 ![Alt text](test1/src/readmeAssets/twoWayBinding.png)
 
+- add custom pipe
+
+```js
+ng g p shared/convert-to-space --skip-tests --dry-run
+
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: 'convertToSpace',
+})
+export class ConvertToSpacePipe implements PipeTransform {
+  transform(value: string, character: string): string {
+    return value.replace(character, ' ');
+  }
+}
+```
+
 </details>

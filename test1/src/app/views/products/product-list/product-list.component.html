@@ -17,7 +17,11 @@
         <thead>
           <tr scope="col">
             <th>
-              <button (click)="toggleImage()" class="btn btn-primary btn-sm">
+              <button
+                style="white-space: nowrap"
+                (click)="toggleImage()"
+                class="btn btn-primary btn-sm"
+              >
                 {{ showImage ? "Hide " : "Show " }} Image
               </button>
             </th>
@@ -25,7 +29,7 @@
             <th scope="col">Code</th>
             <th scope="col">Available</th>
             <th scope="col">Price</th>
-            <th scope="col">5 Star Rating</th>
+            <th scope="col">Rating</th>
           </tr>
         </thead>
         <tbody>
@@ -40,9 +44,11 @@
               />
             </td>
             <td>{{ product.productName }}</td>
-            <td>{{ product.productCode }}</td>
+            <td>
+              {{ product.productCode | lowercase | convertToSpace : "-" }}
+            </td>
             <td>{{ product.releaseDate }}</td>
-            <td>{{ product.price }}</td>
+            <td>{{ product.price | currency : "USD" : "symbol" : "1.2-2" }}</td>
             <td>{{ product.starRating }}</td>
           </tr>
         </tbody>
