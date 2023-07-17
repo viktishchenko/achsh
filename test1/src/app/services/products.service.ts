@@ -1,4 +1,7 @@
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable, catchError, tap, throwError } from 'rxjs';
+import { IProducts } from '../models/products';
 
 @Injectable({
   providedIn: 'root',
@@ -6,30 +9,26 @@ import { Injectable } from '@angular/core';
 export class ProductsService {
   private productUrl = 'api/products/products.json';
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
-  getProduct() {
-    return [
-      {
-        productId: 1,
-        productName: 'Leaf Rake',
-        productCode: 'GDN-0011',
-        releaseDate: 'March 19, 2021',
-        description: 'Leaf rake with 48-inch wooden handle.',
-        price: 19.95,
-        starRating: 3.2,
-        imageUrl: 'assets/images/leaf_rake.png',
-      },
-      {
-        productId: 2,
-        productName: 'Garden Cart',
-        productCode: 'GDN-0023',
-        releaseDate: 'March 18, 2021',
-        description: '15 gallon capacity rolling garden cart',
-        price: 32.99,
-        starRating: 4.2,
-        imageUrl: 'assets/images/garden_cart.png',
-      },
-    ];
+  getProducts(): Observable<IProducts[]> {
+    return this.http.get<IProducts[]>(this.productUrl).pipe(
+      // tap((data) => console.log('Data>>', JSON.stringify(data))),
+      catchError(this.handleError)
+    );
+  }
+
+  private handleError(err: HttpErrorResponse): Observable<never> {
+    let errorMessage = '';
+    if (err.error instanceof ErrorEvent) {
+      // A client-side or network error occurred. Handle it accordingly.
+      errorMessage = `An error occurred: ${err.error.message}`;
+    } else {
+      // The backend returned an unsuccessful response code.
+      // The response body may contain clues as to what went wrong,
+      errorMessage = `Server returned code: ${err.status}, error message is: ${err.message}`;
+    }
+    console.error(errorMessage);
+    return throwError(() => errorMessage);
   }
 }

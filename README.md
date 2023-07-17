@@ -105,3 +105,33 @@ ng g c shared/stars --flat --skip-tests --inline-template --inline-style --dry-r
 - Emitting an Event (@Output)
 
 </details>
+
+<details>
+
+<summary>ep4</summary>
+
+- implement service
+- retrieve data with http
+
+```js
+getProducts(): Observable<IProducts[]> {
+  return this.http.get<IProducts[]>(this.productUrl).pipe(
+    catchError(this.handleError)
+  );
+}
+
+ngOnInit(): void {
+this.sub = this.productService.getProducts().subscribe({
+  next: (product) => {
+    (this.products = product), (this.filteredProducts = this.products);
+  },
+  error: (err) => (this.errorMessage = err),
+});
+}
+
+ngOnDestroy(): void {
+this.sub.unsubscribe();
+}
+```
+
+</details>
