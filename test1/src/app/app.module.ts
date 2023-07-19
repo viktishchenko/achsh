@@ -9,6 +9,7 @@ import { ConvertToSpacePipe } from './shared/convert-to-space.pipe';
 import { StarsComponent } from './shared/stars.component';
 import { ProductDetailComponent } from './views/products/product-detail/product-detail.component';
 import { WelcomeComponent } from './views/home/welcome.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { WelcomeComponent } from './views/home/welcome.component';
     StarsComponent,
     ProductDetailComponent,
   ],
-  imports: [BrowserModule, FormsModule, HttpClientModule, WelcomeComponent],
+  imports: [BrowserModule, FormsModule, HttpClientModule, WelcomeComponent, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })
