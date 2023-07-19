@@ -273,3 +273,74 @@ import { Router } from '@angular/router';
 ![Alt text](test1/src/readmeAssets/route-back-btn.png)
 
 </details>
+
+<details>
+
+<summary>ep7</summary>
+
+- protecting routes guards
+
+![Alt text](test1/src/readmeAssets/protecting-routes-guards.png)
+
+```js
+// generate guard
+
+ng g g views/products/product-detail/product-detail --skip-tests --dry-run
+
+```
+
+<details>
+
+<summary>implement canactivate guard</summary>
+
+```js
+//app-routing.module.ts
+import { ProductDetailGuard } from './views/products/product-detail/product-detail.guard';
+
+const routes: Routes = [
+  {
+    path: 'products/:id',
+    canActivate: [ProductDetailGuard],
+    component: ProductDetailComponent,
+  },
+];
+export class AppRoutingModule {}
+
+// product-detail-guard.ts
+import { Injectable } from '@angular/core';
+import {
+  ActivatedRouteSnapshot,
+  Router,
+  RouterStateSnapshot,
+  UrlTree,
+} from '@angular/router';
+import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class ProductDetailGuard {
+  constructor(private router: Router) {}
+
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ):
+    | Observable<boolean | UrlTree>
+    | Promise<boolean | UrlTree>
+    | boolean
+    | UrlTree {
+    const id = Number(route.paramMap.get('id'));
+    if (isNaN(id) || id < 1) {
+      alert('Invalid product id');
+      this.router.navigate(['/products']);
+    }
+    return true;
+  }
+}
+
+```
+
+</details>
+
+</details>
