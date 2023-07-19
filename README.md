@@ -135,3 +135,29 @@ this.sub.unsubscribe();
 ```
 
 </details>
+
+<details>
+
+<summary>ep5</summary>
+
+- add detail component
+
+```js
+ng g c views/products/product-detail --skip-tests --dry-run
+
+/* this component is not nested, selector is don't need
+   it's part os the routing */
+import { Component, Input } from '@angular/core';
+
+@Component({
+ // selector: 'app-product-detail',
+ //--------------------------------
+  templateUrl: './product-detail.component.html',
+  styleUrls: ['./product-detail.component.css'],
+})
+export class ProductDetailComponent {
+  pageTitle: string = 'Product Detail';
+}
+```
+
+</details>

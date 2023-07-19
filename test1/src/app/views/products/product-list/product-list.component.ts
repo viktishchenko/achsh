@@ -56,7 +56,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
   }
 
   sendData(data: number) {
-    this.pageTitle = `Product list rating: ${data}`;
+    this.pageTitle = `Product list | selected product rating: ${data}`;
     console.log(`Sending data to parent component: ${data}`);
   }
 }
