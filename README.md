@@ -258,4 +258,18 @@ export class AppRoutingModule {}
 ![Alt text](test1/src/readmeAssets/save-navigation-operator.png)
 ```
 
+- add back btn
+
+```js
+import { Router } from '@angular/router';
+
+  constructor(private router: Router) {}
+
+  onBack() {
+    this.router.navigate(['/products']);
+  }
+```
+
+![Alt text](test1/src/readmeAssets/route-back-btn.png)
+
 </details>
