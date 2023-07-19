@@ -341,6 +341,10 @@ export class ProductDetailGuard {
 
 ```
 
+> -m app-name - register module in app-name
+
 </details>
+
+![Alt text](test1/src/readmeAssets/fin-app.png)
 
 </details>

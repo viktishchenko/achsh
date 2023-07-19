@@ -5,5 +5,5 @@ import { Component } from '@angular/core';
   standalone: true,
 })
 export class WelcomeComponent {
-  public pageTitle = 'Welcome';
+  public pageTitle = 'Welcome component';
 }
