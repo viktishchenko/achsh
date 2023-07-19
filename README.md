@@ -235,4 +235,27 @@ export class AppRoutingModule {}
 
 ![](test1/src/readmeAssets/init-routing.png)
 
+- add detail route with save navigation operator
+
+- read params from route
+
+![Alt text](test1/src/readmeAssets/read-url-params.png)
+
+```html
+<!-- SAVE NAVIGAION OPERATOR - ? 
+  guard against null or undefined value 
+
+  <div class="card-header">
+    {{ pageTitle + ": " + product?.productName }}
+  </div>
+
+    OR we can use *ngIf 
+-->
+<div *ngIf="product" class="card-header">
+  {{ pageTitle + ": " + product.productName }}
+</div>
+
+![Alt text](test1/src/readmeAssets/save-navigation-operator.png)
+```
+
 </details>
