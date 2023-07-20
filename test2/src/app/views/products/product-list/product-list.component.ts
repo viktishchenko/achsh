@@ -55,7 +55,11 @@ import { IProduct } from "src/app/models/product";
                 </td>
                 <td>{{ product.releaseDate }}</td>
                 <td>{{ product.price | currency }}</td>
-                <td>{{ product.starRating }}</td>
+                <td>
+                  <app-stars-rating
+                    [rating]="product.starRating"
+                  ></app-stars-rating>
+                </td>
               </tr>
             </tbody>
           </table>

@@ -110,3 +110,11 @@ filteredData(val){
   return this.products.filter(el=>el.productName.toLowerCase().includes(va.toLowerCase()))
 }
 ```
+
+- add star-rating [component](src/app/shared/stars-rating.component.ts)
+
+```js
+ng g c shared/stars-rating --falt
+```
+
+![Alt text](src/readmeAssets/star-component.png)
