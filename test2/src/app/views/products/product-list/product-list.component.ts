@@ -39,7 +39,7 @@ import { IProduct } from "src/app/models/product";
               </tr>
             </thead>
             <tbody *ngIf="products">
-              <tr *ngFor="let product of products">
+              <tr *ngFor="let product of filteredProducts">
                 <td>
                   <img
                     *ngIf="showImage"
@@ -70,6 +70,7 @@ export class ProductListComponent implements OnInit {
   pageTitle = "Product list";
   showImage = false;
   imageMargin = 5;
+  filteredProducts: IProduct[] = [];
 
   private _listFilter = " ";
   get listFilter() {
@@ -78,6 +79,7 @@ export class ProductListComponent implements OnInit {
 
   set listFilter(filterValue: string) {
     this._listFilter = filterValue;
+    this.filteredProducts = this.filteredData(filterValue);
   }
 
   products: IProduct[] = [
@@ -104,7 +106,13 @@ export class ProductListComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    this.listFilter = "cart";
+    this.listFilter = "";
+  }
+
+  filteredData(val: string) {
+    return this.products.filter((el) =>
+      el.productName.toLocaleLowerCase().includes(val.toLocaleLowerCase())
+    );
   }
 
   toggleImage() {

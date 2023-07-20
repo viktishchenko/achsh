@@ -90,3 +90,23 @@ set _listFilter(value: string) {
     this._listFilter = value
 }
 ```
+
+- implement input filter
+
+```js
+filtredProducts: IProduct[]=[]
+
+
+set _listFilter(value: string) {
+    this._listFilter = value
+    this.filteredProducts = this.FilteredData(velue)
+}
+
+  ngOnInit(): void {
+    this.listFilter = "";
+  }
+
+filteredData(val){
+  return this.products.filter(el=>el.productName.toLowerCase().includes(va.toLowerCase()))
+}
+```
