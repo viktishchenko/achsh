@@ -57,6 +57,7 @@ import { IProduct } from "src/app/models/product";
                 <td>{{ product.price | currency }}</td>
                 <td>
                   <app-stars-rating
+                    (clickRatingEvent)="ratingHandle($event)"
                     [rating]="product.starRating"
                   ></app-stars-rating>
                 </td>
@@ -121,5 +122,10 @@ export class ProductListComponent implements OnInit {
 
   toggleImage() {
     this.showImage = !this.showImage;
+  }
+
+  ratingHandle(rating: number) {
+    this.pageTitle = `Product list: ${rating}`;
+    console.log(`hello from products ${rating}`);
   }
 }

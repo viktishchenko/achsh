@@ -118,3 +118,28 @@ ng g c shared/stars-rating --falt
 ```
 
 ![Alt text](src/readmeAssets/star-component.png)
+
+- send data w @output
+
+```js
+// eventDonor.html
+(click)="clickHandle(value)"
+
+// eventDonor.ts
+@Output()donorComponentEvent = new EventEmitter()
+
+clickHandle(val){
+  this.donorComponentEvent.emit(val)
+}
+
+// eventAcceptor.html
+<plug-in-component (donorComponentEvent)="eventHandler($event)" ></plug-in-component>
+
+// eventAcceptor.ts
+
+eventHandler(val){
+  // ... ${val}
+}
+
+
+```
