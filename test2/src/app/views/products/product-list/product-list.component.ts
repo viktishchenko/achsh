@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { IProduct } from "src/app/models/product";
 
 @Component({
@@ -66,11 +66,20 @@ import { IProduct } from "src/app/models/product";
   `,
   styles: [],
 })
-export class ProductListComponent {
+export class ProductListComponent implements OnInit {
   pageTitle = "Product list";
   showImage = false;
   imageMargin = 5;
-  listFilter = "cart";
+
+  private _listFilter = " ";
+  get listFilter() {
+    return this._listFilter;
+  }
+
+  set listFilter(filterValue: string) {
+    this._listFilter = filterValue;
+  }
+
   products: IProduct[] = [
     {
       productId: 2,
@@ -93,6 +102,10 @@ export class ProductListComponent {
       imageUrl: "assets/images/hammer.png",
     },
   ];
+
+  ngOnInit(): void {
+    this.listFilter = "cart";
+  }
 
   toggleImage() {
     this.showImage = !this.showImage;

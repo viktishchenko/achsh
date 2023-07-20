@@ -78,3 +78,15 @@ listFilter = 'cart'
 ```js
 ng g p shared/convert-to-space --dry-run
 ```
+
+- init filter logic (get|set)
+
+```js
+_listFilter = 'cart'
+get listFilter() {
+ return this._listFilter
+}
+set _listFilter(value: string) {
+    this._listFilter = value
+}
+```
