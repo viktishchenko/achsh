@@ -15,7 +15,9 @@ import { Component } from "@angular/core";
         </div>
       </div>
     </nav>
-    <div class="container">content</div>
+    <div class="container">
+      <app-product-list></app-product-list>
+    </div>
   `,
   styles: [],
 })

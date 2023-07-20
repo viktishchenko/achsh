@@ -39,3 +39,16 @@ npm i bootstrap bootstrap-icons
 ```
 
 ![Alt text](src/readmeAssets/init.png)
+
+- add mock & models
+- add service & component
+
+```js
+ng g i models/product --dry-run
+ng g c views/products/product-list --dry-run
+ng g s services/products --dry run
+```
+
+- display mock (conditionl render w icons) + [style.margin.px] binding
+
+![Alt text](src/readmeAssets/show-hide.png)
