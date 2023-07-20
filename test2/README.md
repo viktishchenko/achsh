@@ -52,3 +52,23 @@ ng g s services/products --dry run
 - display mock (conditionl render w icons) + [style.margin.px] binding
 
 ![Alt text](src/readmeAssets/show-hide.png)
+
+- add two way binding input
+
+```js
+// app.module.ts
+import { FormsModule } from "@angular/forms";
+
+@NgModule({
+  imports: [BrowserModule, FormsModule],
+})
+export class AppModule {}
+
+// component.html
+<div class="col-md-4">
+<input [(ngModel)]="listFilter" type="text" />
+</div>
+
+// component.ts
+listFilter = 'cart'
+```

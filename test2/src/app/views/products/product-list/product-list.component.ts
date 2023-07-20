@@ -7,7 +7,13 @@ import { IProduct } from "src/app/models/product";
     <div class="card">
       <div class="card-header">{{ pageTitle | titlecase }}</div>
       <div class="card-body">
-        <div class="row">input</div>
+        <div class="row">
+          <div class="col-md-2">Filtred by: {{ listFilter }}</div>
+          <div class="col-md-4">
+            <input [(ngModel)]="listFilter" type="text" />
+          </div>
+        </div>
+        <div class="row"></div>
         <hr />
         <div class="row"></div>
         <div class="table-responsive">
@@ -62,6 +68,7 @@ export class ProductListComponent {
   pageTitle = "Product list";
   showImage = false;
   imageMargin = 5;
+  listFilter = "cart";
   products: IProduct[] = [
     {
       productId: 2,
