@@ -50,7 +50,9 @@ import { IProduct } from "src/app/models/product";
                   />
                 </td>
                 <td>{{ product.productName }}</td>
-                <td>{{ product.productCode | lowercase }}</td>
+                <td>
+                  {{ product.productCode | lowercase | convertToSpace : "-" }}
+                </td>
                 <td>{{ product.releaseDate }}</td>
                 <td>{{ product.price | currency }}</td>
                 <td>{{ product.starRating }}</td>

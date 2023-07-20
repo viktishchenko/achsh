@@ -72,3 +72,9 @@ export class AppModule {}
 // component.ts
 listFilter = 'cart'
 ```
+
+- add custom pipe
+
+```js
+ng g p shared/convert-to-space --dry-run
+```
