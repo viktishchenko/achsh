@@ -6,7 +6,7 @@ import { Component } from "@angular/core";
     <nav class="navbar navbar-expand bg-light">
       <div class="container">
         <div class="container-fluid d-flex flex-wrap fix-position">
-          <a class="navbar-brand">Angular app</a>
+          <a class="navbar-brand" routerLink="/welcome">Angular app</a>
           <div class="navbar-nav flex-wrap">
             <a class="nav-link" routerLink="/welcome" routerLinkActive="active"
               >Home</a

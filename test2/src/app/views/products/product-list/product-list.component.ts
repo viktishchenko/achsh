@@ -7,7 +7,10 @@ import { ProductsService } from "src/app/services/products.service";
   selector: "app-product-list",
   template: `
     <div class="card">
-      <div class="card-header">{{ pageTitle | titlecase }}</div>
+      <div class="card-header">
+        {{ pageTitle | titlecase }}
+        <span *ngIf="rating" class="rating">{{ rating }}</span>
+      </div>
       <div class="card-body">
         <div class="row">
           <div class="col-md-2">Filtred by: {{ listFilter }}</div>
@@ -28,9 +31,9 @@ import { ProductsService } from "src/app/services/products.service";
                     (click)="toggleImage()"
                     class="btn btn-primary btn-sm"
                   >
-                    {{ showImage ? "Show" : "Hide" }}
-                    <i [hidden]="!showImage" class="bi bi-eye"></i>
-                    <i [hidden]="showImage" class="bi bi-eye-slash"></i>
+                    {{ showImage ? "Hide" : "Show" }}
+                    <i [hidden]="showImage" class="bi bi-eye"></i>
+                    <i [hidden]="!showImage" class="bi bi-eye-slash"></i>
                   </button>
                 </th>
                 <th scope="col">Product</th>
@@ -51,7 +54,11 @@ import { ProductsService } from "src/app/services/products.service";
                     alt="{{ product.productName }}"
                   />
                 </td>
-                <td>{{ product.productName }}</td>
+                <td>
+                  <a routerLink="{{ product.productId }}">{{
+                    product.productName
+                  }}</a>
+                </td>
                 <td>
                   {{ product.productCode | lowercase | convertToSpace : "-" }}
                 </td>
@@ -71,7 +78,16 @@ import { ProductsService } from "src/app/services/products.service";
       <div class="card-footer text-muted">footer</div>
     </div>
   `,
-  styles: [],
+  styles: [
+    `
+      .rating {
+        background-color: goldenrod;
+        padding: 0px 5px;
+        border-radius: 7px;
+        color: ghostwhite;
+      }
+    `,
+  ],
 })
 export class ProductListComponent implements OnInit, OnDestroy {
   pageTitle = "Product list";
@@ -81,6 +97,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
   products: IProduct[] = [];
   filteredProducts: IProduct[] = [];
   sub!: Subscription;
+  rating: number | undefined;
 
   private _listFilter = "";
   get listFilter() {
@@ -119,7 +136,8 @@ export class ProductListComponent implements OnInit, OnDestroy {
   }
 
   ratingHandle(rating: number) {
-    this.pageTitle = `Product list: ${rating}`;
+    this.rating = rating;
+    // this.pageTitle = `Product list: ${rating}`;
     console.log(`hello from products ${rating}`);
   }
 }
