@@ -222,3 +222,61 @@ export class AppRoutingModule {}
 ![Alt text](src/readmeAssets/add-routing.png)
 
 </details>
+
+<details>
+
+<summary>code</summary>
+
+[CanActivate guard](src/app/views/products/product-detail/product-detail.guard.ts)
+
+```js
+// CanActivate guard
+ng g g views/products/product-detail/product-detail --dry-run
+
+//app-routing.module.ts
+import { ProductDetailGuard } from './views/products/product-detail/product-detail.guard';
+
+const routes: Routes = [
+  {
+    path: 'products/:id',
+    canActivate: [ProductDetailGuard],
+    component: ProductDetailComponent,
+  },
+];
+export class AppRoutingModule {}
+
+// product-detail-guard.ts
+import { Injectable } from '@angular/core';
+import {
+  ActivatedRouteSnapshot,
+  Router,
+  RouterStateSnapshot,
+  UrlTree,
+} from '@angular/router';
+import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class ProductDetailGuard {
+  constructor(private router: Router) {}
+
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ):
+    | Observable<boolean | UrlTree>
+    | Promise<boolean | UrlTree>
+    | boolean
+    | UrlTree {
+    const id = Number(route.paramMap.get('id'));
+    if (isNaN(id) || id < 1) {
+      alert('Invalid product id');
+      this.router.navigate(['/products']);
+    }
+    return true;
+  }
+}
+```
+
+</details>
