@@ -30,6 +30,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 - init app
 
+<details>
+
+<summary>code</summary>
+
 ```js
 mkdir test2
 cd test2
@@ -53,7 +57,13 @@ ng g s services/products --dry run
 
 ![Alt text](src/readmeAssets/show-hide.png)
 
+</details>
+
 - add two way binding input
+
+<details>
+
+<summary>code</summary>
 
 ```js
 // app.module.ts
@@ -91,7 +101,13 @@ set _listFilter(value: string) {
 }
 ```
 
+</details>
+
 - implement input filter
+
+<details>
+
+<summary>code</summary>
 
 ```js
 filtredProducts: IProduct[]=[]
@@ -143,3 +159,66 @@ eventHandler(val){
 ```
 
 - implement sevice
+- add detail & welcom components
+
+```js
+ng g c views/products/product-detail --dry-run
+ng g c views/home/welcome --flat --dry-run
+```
+
+</details>
+
+- add routing
+
+<details>
+<summary>code</summary>
+
+```js
+ng generate module app-routing --flat --module=app
+
+// app.module.ts
+import { AppRoutingModule } from './app-routing.module';
+
+@NgModule({
+  declarations: [
+// ...
+  ],
+  imports: [ AppRoutingModule],
+
+})
+export class AppModule {}
+
+// src/app/app-routing.module.ts
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { RouterModule, Routes } from "@angular/router";
+import { ProductListComponent } from "./views/products/product-list/product-list.component";
+import { ProductDetailComponent } from "./views/products/product-detail/product-detail.component";
+import { WelcomeComponent } from "./views/home/welcome.component";
+import { AboutComponent } from "./views/about/about.component";
+
+const routes: Routes = [
+  { path: "products", component: ProductListComponent },
+  { path: "products/:id", component: ProductDetailComponent },
+  { path: "welcome", component: WelcomeComponent },
+  { path: "about", component: AboutComponent },
+  { path: "", redirectTo: "welcome", pathMatch: "full" },
+  { path: "**", redirectTo: "welcome", pathMatch: "full" },
+];
+
+@NgModule({
+  declarations: [],
+  imports: [CommonModule, RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+})
+export class AppRoutingModule {}
+
+// app.component.html
+<a class="nav-link" routerLink="/welcome" routerLinkActive="active">Home</a>
+// app.component.html
+.nav-link.active {background-color: #f3f3f3}
+```
+
+![Alt text](src/readmeAssets/add-routing.png)
+
+</details>

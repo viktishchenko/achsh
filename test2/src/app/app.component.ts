@@ -6,20 +6,32 @@ import { Component } from "@angular/core";
     <nav class="navbar navbar-expand bg-light">
       <div class="container">
         <div class="container-fluid d-flex flex-wrap fix-position">
-          <a class="navbar-brand" href="#">Angular app</a>
+          <a class="navbar-brand">Angular app</a>
           <div class="navbar-nav flex-wrap">
-            <a class="nav-link">Home</a>
-            <a class="nav-link">Products</a>
-            <a class="nav-link">About</a>
+            <a class="nav-link" routerLink="/welcome" routerLinkActive="active"
+              >Home</a
+            >
+            <a class="nav-link" routerLink="/products" routerLinkActive="active"
+              >Products</a
+            >
+            <a class="nav-link" routerLink="/about" routerLinkActive="active"
+              >About</a
+            >
           </div>
         </div>
       </div>
     </nav>
     <div class="container">
-      <app-product-list></app-product-list>
+      <router-outlet></router-outlet>
     </div>
   `,
-  styles: [],
+  styles: [
+    `
+      .nav-link.active {
+        background-color: #f3f3f3;
+      }
+    `,
+  ],
 })
 export class AppComponent {
   title = "test2";
