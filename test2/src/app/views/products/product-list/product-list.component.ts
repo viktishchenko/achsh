@@ -1,4 +1,5 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Subscription } from "rxjs";
 import { IProduct } from "src/app/models/product";
 import { ProductsService } from "src/app/services/products.service";
 
@@ -72,13 +73,16 @@ import { ProductsService } from "src/app/services/products.service";
   `,
   styles: [],
 })
-export class ProductListComponent implements OnInit {
+export class ProductListComponent implements OnInit, OnDestroy {
   pageTitle = "Product list";
   showImage = false;
   imageMargin = 5;
+  errorMessage = "";
+  products: IProduct[] = [];
   filteredProducts: IProduct[] = [];
+  sub!: Subscription;
 
-  private _listFilter = " ";
+  private _listFilter = "";
   get listFilter() {
     return this._listFilter;
   }
@@ -88,18 +92,25 @@ export class ProductListComponent implements OnInit {
     this.filteredProducts = this.filteredData(filterValue);
   }
 
-  products: IProduct[] = [];
-
   constructor(private productService: ProductsService) {}
 
   ngOnInit(): void {
-    this.products = this.productService.getAllProducts();
-    this.filteredProducts = this.products;
+    this.sub = this.productService.getAllProducts().subscribe({
+      next: (products) => {
+        this.products = products;
+        this.filteredProducts = this.products;
+      },
+      error: (err) => (this.errorMessage = err),
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
   }
 
   filteredData(val: string) {
-    return this.products.filter((el) =>
-      el.productName.toLocaleLowerCase().includes(val.toLocaleLowerCase())
+    return this.products.filter((product) =>
+      product.productName.toLocaleLowerCase().includes(val.toLocaleLowerCase())
     );
   }
 
