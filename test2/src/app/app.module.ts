@@ -13,17 +13,14 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AboutComponent } from "./views/about/about/about.component";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ProductListComponent,
-    ConvertToSpacePipe,
-    StarsRatingComponent,
-    ProductDetailComponent,
-    WelcomeComponent,
-    AboutComponent,
-  ],
-  imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule],
-  providers: [],
-  bootstrap: [AppComponent],
+    declarations: [AppComponent],
+    imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule, ProductListComponent,
+        ConvertToSpacePipe,
+        StarsRatingComponent,
+        ProductDetailComponent,
+        WelcomeComponent,
+        AboutComponent],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule {}

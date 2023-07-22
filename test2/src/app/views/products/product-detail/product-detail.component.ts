@@ -2,11 +2,13 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { IProduct } from "src/app/models/product";
 import { ProductsService } from "src/app/services/products.service";
-import { Location } from "@angular/common";
+import { Location, NgIf, LowerCasePipe, CurrencyPipe } from "@angular/common";
+import { ConvertToSpacePipe } from "../../../shared/convert-to-space.pipe";
+import { StarsRatingComponent } from "../../../shared/stars-rating.component";
 
 @Component({
-  selector: "app-product-detail",
-  template: `
+    selector: "app-product-detail",
+    template: `
     <div class="card">
       <div class="card-header">
         {{ pageTitle + ": " + product?.productName }}
@@ -72,7 +74,9 @@ import { Location } from "@angular/common";
       </div>
     </div>
   `,
-  styles: [],
+    styles: [],
+    standalone: true,
+    imports: [NgIf, StarsRatingComponent, LowerCasePipe, CurrencyPipe, ConvertToSpacePipe]
 })
 export class ProductDetailComponent implements OnInit {
   product: IProduct | undefined;

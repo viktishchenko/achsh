@@ -2,10 +2,15 @@ import { Component, OnDestroy, OnInit } from "@angular/core";
 import { Subscription } from "rxjs";
 import { IProduct } from "src/app/models/product";
 import { ProductsService } from "src/app/services/products.service";
+import { ConvertToSpacePipe } from "../../../shared/convert-to-space.pipe";
+import { StarsRatingComponent } from "../../../shared/stars-rating.component";
+import { RouterLink } from "@angular/router";
+import { FormsModule } from "@angular/forms";
+import { NgIf, NgFor, LowerCasePipe, TitleCasePipe, CurrencyPipe } from "@angular/common";
 
 @Component({
-  selector: "app-product-list",
-  template: `
+    selector: "app-product-list",
+    template: `
     <div class="card">
       <div class="card-header">
         {{ pageTitle | titlecase }}
@@ -78,8 +83,8 @@ import { ProductsService } from "src/app/services/products.service";
       <div class="card-footer text-muted">footer</div>
     </div>
   `,
-  styles: [
-    `
+    styles: [
+        `
       .rating {
         background-color: goldenrod;
         padding: 0px 5px;
@@ -87,7 +92,9 @@ import { ProductsService } from "src/app/services/products.service";
         color: ghostwhite;
       }
     `,
-  ],
+    ],
+    standalone: true,
+    imports: [NgIf, FormsModule, NgFor, RouterLink, StarsRatingComponent, LowerCasePipe, TitleCasePipe, CurrencyPipe, ConvertToSpacePipe]
 })
 export class ProductListComponent implements OnInit, OnDestroy {
   pageTitle = "Product list";

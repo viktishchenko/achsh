@@ -280,3 +280,19 @@ export class ProductDetailGuard {
 ```
 
 </details>
+
+---
+
+## go standalone
+
+<details>
+
+<summary>code</summary>
+
+```js
+ng g @angular/core:standalone // Convert all components ....
+```
+
+![Alt text](src/readmeAssets/migrate-to-standalone.png)
+
+</details>

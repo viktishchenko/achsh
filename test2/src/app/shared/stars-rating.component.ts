@@ -8,8 +8,8 @@ import {
 } from "@angular/core";
 
 @Component({
-  selector: "app-stars-rating",
-  template: `
+    selector: "app-stars-rating",
+    template: `
     <div
       (click)="onRating(rating)"
       class="crop"
@@ -26,8 +26,8 @@ import {
       {{ rating }}
     </div>
   `,
-  styles: [
-    `
+    styles: [
+        `
       .crop {
         overflow: hidden;
         color: goldenrod;
@@ -37,7 +37,8 @@ import {
         cursor: pointer;
       }
     `,
-  ],
+    ],
+    standalone: true
 })
 export class StarsRatingComponent implements OnChanges {
   @Input() rating: number = 0;
