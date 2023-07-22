@@ -1,8 +1,9 @@
 import { Component } from "@angular/core";
+import { RouterLink, RouterLinkActive, RouterOutlet } from "@angular/router";
 
 @Component({
-  selector: "app-root",
-  template: `
+    selector: "app-root",
+    template: `
     <nav class="navbar navbar-expand bg-light">
       <div class="container">
         <div class="container-fluid d-flex flex-wrap fix-position">
@@ -25,13 +26,15 @@ import { Component } from "@angular/core";
       <router-outlet></router-outlet>
     </div>
   `,
-  styles: [
-    `
+    styles: [
+        `
       .nav-link.active {
         background-color: #f3f3f3;
       }
     `,
-  ],
+    ],
+    standalone: true,
+    imports: [RouterLink, RouterLinkActive, RouterOutlet]
 })
 export class AppComponent {
   title = "test2";

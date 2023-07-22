@@ -289,10 +289,40 @@ export class ProductDetailGuard {
 
 <summary>code</summary>
 
+![Alt text](src/readmeAssets/migrate-to-standalone-wha.png
+
+---
+
+### step 1 // Convert
+
 ```js
 ng g @angular/core:standalone // Convert all components ....
 ```
 
 ![Alt text](src/readmeAssets/migrate-to-standalone.png)
+
+### step 2 // Delete
+
+![Alt text](src/readmeAssets/migrate-to-standalone-wha2.png)
+
+```js
+ng g @angular/core:standalone // Remove unnecessary NgModule ....
+```
+
+![Alt text](src/readmeAssets/migrate-to-standalone2.png)
+
+### step 3 // Bootstrap
+
+![Alt text](src/readmeAssets/migrate-to-standalone-wha3.png)
+
+```js
+ng g @angular/core:standalone // Bootstrap the application using ....
+```
+
+![Alt text](src/readmeAssets/migrate-to-standalone3.png)
+
+---
+
+![Alt text](src/readmeAssets/fin-app.png)
 
 </details>
