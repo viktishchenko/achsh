@@ -1,10 +1,24 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+import { WelcomeComponent } from './views/home/welcome.component';
+import { PageNotFoundComponent } from './views/error-page/page-not-found.component';
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot([
+      { path: 'welcome', component: WelcomeComponent },
+      {
+        path: 'products',
+        loadChildren: () =>
+          import('./views/products/product.module').then(
+            (m) => m.ProductModule
+          ),
+      },
+      { path: '', redirectTo: 'welcome', pathMatch: 'full' },
+      { path: '**', component: PageNotFoundComponent },
+    ]),
+  ],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
