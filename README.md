@@ -196,4 +196,22 @@ npm i bootstrap
 
 </details>
 
+- parameters handling
+
+<details>
+
+![Alt text](test3/src/readmeAssets/handling-parameters.png)
+
+</details>
+
+- mapping an HTTP Response
+
+<details>
+
+![Alt text](test3/src/readmeAssets/mapping-response.png)
+
+![Alt text](test3/src/readmeAssets/mapping-http-response.png)
+
+</details>
+
 </details>
