@@ -212,6 +212,30 @@ npm i bootstrap
 
 ![Alt text](test3/src/readmeAssets/mapping-http-response.png)
 
+- mapping array elements
+
+![Alt text](test3/src/readmeAssets/syntax-error.png)
+
+// resolve syntax error (handle possibly undefined)
+
+![Alt text](test3/src/readmeAssets/syntax-error-resolve.png)
+
+// another fup
+
+![Alt text](test3/src/readmeAssets/syntax-error-resolve2.png)
+
+// transforming array elements
+
+![Alt text](test3/src/readmeAssets/transforming-array.png)
+
+// transforming data array!?
+
+![Alt text](test3/src/readmeAssets/transforming-data-http.png)
+
+// transforming tada res
+
+![Alt text](test3/src/readmeAssets/transforming-data-http-res.png)
+
 </details>
 
 </details>
