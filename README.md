@@ -113,3 +113,47 @@ npm i bootstrap
 ![Alt text](test3/src/readmeAssets/async-2.png)
 
 </details>
+
+- handling observable error
+
+<details>
+  - catch
+  - optionally rethrow the error
+  - replace the errored observable w a new observable
+
+- RxJs Error Handling Features
+  - catchError
+    ![Alt text](test3/src/readmeAssets/catchError.png)
+    ![Alt text](test3/src/readmeAssets/catchError-2.png)
+  - throwError
+    ![Alt text](test3/src/readmeAssets/throwError.png)
+  - EMPTY
+    ![Alt text](test3/src/readmeAssets/emptyError.png)
+
+---
+
+- catch and replace
+
+![Alt text](test3/src/readmeAssets/catch-replace.png)
+
+- catch and rethrow
+
+![Alt text](test3/src/readmeAssets/catch-rethrow.png)
+
+// or
+
+![Alt text](test3/src/readmeAssets/catch-rethrow2.png)
+
+// regular
+
+![Alt text](test3/src/readmeAssets/handleError.png)
+
+// reactive
+
+![Alt text](test3/src/readmeAssets/handleError-reactive.png)
+
+// code
+
+![Alt text](test3/src/readmeAssets/handleError-reactive2.png)
+
+</details>
