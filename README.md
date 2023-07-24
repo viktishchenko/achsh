@@ -76,6 +76,8 @@ npm i bootstrap
 
 ## Data retrieval pattern
 
+<details>
+
 - procedural
 
 <details>
@@ -178,5 +180,20 @@ npm i bootstrap
 // without change detection
 
 ![Alt text](test3/src/readmeAssets/change-detection-w-o.png)
+
+</details>
+
+- procedural vs declarative
+
+<details>
+// procedural
+
+![Alt text](test3/src/readmeAssets/procedural.png)
+
+// declarative
+
+![Alt text](test3/src/readmeAssets/declarative.png)
+
+</details>
 
 </details>
