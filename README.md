@@ -157,3 +157,26 @@ npm i bootstrap
 ![Alt text](test3/src/readmeAssets/handleError-reactive2.png)
 
 </details>
+
+- async pipe benefits
+
+<details>
+  - no need to subscribe
+  - no need to unsubscribe
+  - improve change detection
+
+![Alt text](test3/src/readmeAssets/change-detection.png)
+
+- implement change detection
+
+![Alt text](test3/src/readmeAssets/change-detection-code.png)
+
+// with change detection
+
+![Alt text](test3/src/readmeAssets/change-detection-w.png)
+
+// without change detection
+
+![Alt text](test3/src/readmeAssets/change-detection-w-o.png)
+
+</details>
