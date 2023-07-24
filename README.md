@@ -71,3 +71,45 @@ npm i bootstrap
 ![Alt text](test3/src/readmeAssets/init-rxjs-app.png)
 
 </details>
+
+---
+
+## Data retrieval pattern
+
+- procedural
+
+<details>
+// interface
+
+![Alt text](test3/src/readmeAssets/interface.png)
+
+// service
+
+![Alt text](test3/src/readmeAssets/service-get.png)
+
+// error handle
+
+![Alt text](test3/src/readmeAssets/err-handle.png)
+
+// get data
+
+![Alt text](test3/src/readmeAssets/get-data.png)
+
+// display data
+
+![Alt text](test3/src/readmeAssets/display-data.png)
+
+</details>
+
+- common pattern with an async pipe ("product$ | async")
+
+<details>
+// init stream$
+
+![Alt text](test3/src/readmeAssets/async-1.png)
+
+// template with async pipe
+
+![Alt text](test3/src/readmeAssets/async-2.png)
+
+</details>
