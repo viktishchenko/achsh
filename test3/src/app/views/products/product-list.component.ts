@@ -16,11 +16,10 @@ export class ProductListComponent {
   errorMessage = '';
   categories: ProductCategory[] = [];
 
-  products$ = this.productService.products$.pipe(
+  products$ = this.productService.productWithCategories$.pipe(
     catchError((err) => {
       this.errorMessage = err;
-      // return of([]);
-      return EMPTY; //
+      return EMPTY;
     })
   );
 

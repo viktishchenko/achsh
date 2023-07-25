@@ -270,4 +270,29 @@ npm i bootstrap
 
 </details>
 
+- mapping an Id to a string
+
+<details>
+// add string category
+
+![Alt text](test3/src/readmeAssets/mapping-id-to-string.png)
+
+// ad second stream
+
+![Alt text](test3/src/readmeAssets/mapping-double-stream.png)
+
+// combining the streams
+
+![Alt text](test3/src/readmeAssets/combining-stream.png)
+
+// combining the streams code
+
+![Alt text](test3/src/readmeAssets/combining-stream-code.png)
+
+// res
+
+![Alt text](test3/src/readmeAssets/mappingResDoubleStream.png)
+
+</details>
+
 </details>
