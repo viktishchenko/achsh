@@ -238,4 +238,36 @@ npm i bootstrap
 
 </details>
 
+---
+
+- types of combination operators/functions
+
+<details>
+
+// combine to a single Observable results (merge,concat)
+
+![Alt text](test3/src/readmeAssets/merge-concat.png)
+
+// flatten high-order Observables
+
+![Alt text](test3/src/readmeAssets/mergeAll.png)
+
+// emit a combined value (combineLatest, forkJoin withLatestFrom)
+
+![Alt text](test3/src/readmeAssets/emit-combine.png)
+
+// combineLatest
+
+![Alt text](test3/src/readmeAssets/combine-latest.png)
+
+// forkJoin (last not latest)
+
+![Alt text](test3/src/readmeAssets/forkJoin.png)
+
+// withLatestFom
+
+![Alt text](test3/src/readmeAssets/withLatestFrom.png)
+
+</details>
+
 </details>
