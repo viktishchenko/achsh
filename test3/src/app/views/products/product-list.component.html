@@ -6,7 +6,7 @@
   <div class="card-body">
     <div class="container">
       <div class="row justify-content-between">
-        <div class="col">
+        <div *ngIf="categories$ | async as categories" class="col">
           <select
             style="max-width: 220px"
             class="form-control"
@@ -31,10 +31,7 @@
     </div>
 
     <div class="table-responsive">
-      <table
-        class="table mb-0"
-        *ngIf="simpleCategoryFilter$ | async as products"
-      >
+      <table class="table mb-0" *ngIf="products$ | async as products">
         <!-- <table class="table mb-0" *ngIf="products$ | async as products"> -->
         <thead>
           <tr>

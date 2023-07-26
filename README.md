@@ -306,6 +306,54 @@ npm i bootstrap
 
 ![Alt text](test3/src/readmeAssets/filter-marble.png)
 
+// data stream vs action stream
+
+![Alt text](test3/src/readmeAssets/dataStreamVsActionStream.png)
+
+// combining data stream and action stream
+
+![Alt text](test3/src/readmeAssets/combine-dataStreamAndAction.png)
+
+// Observable: Unicast
+
+![Alt text](test3/src/readmeAssets/observable-unicast.png)
+
+// Subject: Multicast
+
+![Alt text](test3/src/readmeAssets/subject-multicast.png)
+
+// BehaviorSubject
+
+![Alt text](test3/src/readmeAssets/behaviorSubject.png)
+
+Creating an Action Stream
+
+![Alt text](test3/src/readmeAssets/createActionStream.png)
+
+// reacting to action
+
+![Alt text](test3/src/readmeAssets/reactingToAction.png)
+
+// reacting to action
+
+![Alt text](test3/src/readmeAssets/reactingToActionCode.png)
+
+// start with initial value
+
+![Alt text](test3/src/readmeAssets/startWithInitial.png)
+
+// StartWith operator
+
+![Alt text](test3/src/readmeAssets/startWith.png)
+
+// StartWith operator
+
+![Alt text](test3/src/readmeAssets/startWithCode.png)
+
+// OR BehaviorSubject
+
+![Alt text](test3/src/readmeAssets/BehaviorSubjectCodeRes.png)
+
 </details>
 
 </details>
