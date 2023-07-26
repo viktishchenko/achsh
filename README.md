@@ -295,4 +295,17 @@ npm i bootstrap
 
 </details>
 
+- reacting to actions RxJs Features (filter,startWith, Subject, BehaviorSubject)
+
+<details>
+// filter
+
+![Alt text](test3/src/readmeAssets/filter.png)
+
+// filter diagram
+
+![Alt text](test3/src/readmeAssets/filter-marble.png)
+
+</details>
+
 </details>
