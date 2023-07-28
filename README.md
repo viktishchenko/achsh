@@ -356,4 +356,10 @@ Creating an Action Stream
 
 </details>
 
+- reacting to actions (selections) // merge, scan
+
+<details>
+
+</details>
+
 </details>
