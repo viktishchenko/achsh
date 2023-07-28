@@ -7,7 +7,10 @@ import {
   combineLatest,
   EMPTY,
   map,
+  merge,
   Observable,
+  scan,
+  Subject,
   tap,
   throwError,
 } from 'rxjs';
@@ -19,7 +22,7 @@ import { ProductCategoryService } from '../product-categories/product-category.s
   providedIn: 'root',
 })
 export class ProductService {
-  private productsUrl = 'api/product';
+  private productsUrl = 'api/products';
   private suppliersUrl = 'api/suppliers';
 
   products$ = this.http.get<Product[]>(this.productsUrl).pipe(
@@ -61,14 +64,31 @@ export class ProductService {
     })
   );
 
-  onSelectedDetailProduct(selectedId: number) {
-    this.detailSelectedSubject.next(selectedId);
-  }
+  private insertedProductSubject = new Subject<Product>();
+  productIncertedAction$ = this.insertedProductSubject.asObservable();
+
+  productsWithAdd$ = merge(
+    this.productWithCategories$,
+    this.productIncertedAction$
+  ).pipe(
+    scan(
+      (allProducts, newProduct) =>
+        newProduct instanceof Array
+          ? [...newProduct]
+          : [...allProducts, newProduct],
+      [] as Product[]
+    )
+  );
 
   constructor(
     private http: HttpClient,
     private productWithCategory: ProductCategoryService
   ) {}
+
+  addNewProduct(newProduct?: Product) {
+    newProduct = newProduct || this.fakeProduct();
+    this.insertedProductSubject.next(newProduct);
+  }
 
   private fakeProduct(): Product {
     return {
@@ -78,9 +98,13 @@ export class ProductService {
       description: 'Our new product',
       price: 8.9,
       categoryId: 3,
-      // category: 'Toolbox',
+      category: 'Toolbox',
       quantityInStock: 30,
     };
+  }
+
+  onSelectedDetailProduct(selectedId: number) {
+    this.detailSelectedSubject.next(selectedId);
   }
 
   private handleError(err: HttpErrorResponse): Observable<never> {

@@ -356,7 +356,7 @@ Creating an Action Stream
 
 </details>
 
-- reacting to actions (selections) // merge, scan
+## Reacting to actions (selections)
 
 <details>
 
@@ -390,6 +390,31 @@ Creating an Action Stream
   ![Alt text](test3/src/readmeAssets/errorMsgWStreamDisplay.png)
 - res: UI Error Display
   ![Alt text](test3/src/readmeAssets/UIerror.png)
+
+</details>
+
+## Managing State // merge, scan
+
+<details>
+
+- read only data
+  ![Alt text](test3/src/readmeAssets/readOnlyData.png)
+- incorporate a change in an Observable
+  ![Alt text](test3/src/readmeAssets/incorporateObservable.png)
+- RxJs Opeator: scan
+  ![Alt text](test3/src/readmeAssets/scanDiagram.png)
+  // with initial state
+  ![Alt text](test3/src/readmeAssets/scanWithInitial.png)
+  // array scan
+  ![Alt text](test3/src/readmeAssets/scanWithArray.png)
+- RxJs Opeator: merge
+  ![Alt text](test3/src/readmeAssets/merge.png)
+  // reacting to an Add Operation
+  ![Alt text](test3/src/readmeAssets/mergePlusScan.png)
+  // reacting to an Add Operation
+  ![Alt text](test3/src/readmeAssets/mergePlusScanCode.png)
+  // reacting to an Add Operation (POST)
+  ![Alt text](test3/src/readmeAssets/mergePlusScanPostRequest.png)
 
 </details>
 
