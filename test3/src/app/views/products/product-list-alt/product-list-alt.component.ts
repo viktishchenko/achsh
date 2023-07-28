@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 import { ProductService } from '../product.service';
-import { EMPTY, catchError } from 'rxjs';
+import { EMPTY, Subject, catchError } from 'rxjs';
 
 @Component({
   selector: 'app-product-list',
@@ -10,12 +10,13 @@ import { EMPTY, catchError } from 'rxjs';
 })
 export class ProductListAltComponent {
   pageTitle = 'Products';
-  errorMessage = '';
+  private errorMessageSubject = new Subject<string>();
+  errorMessage$ = this.errorMessageSubject.asObservable();
   selectedProductId$ = this.productService.selectedProduct$;
 
   products$ = this.productService.productWithCategories$.pipe(
     catchError((err) => {
-      this.errorMessage = err;
+      this.errorMessageSubject.next(err);
       return EMPTY;
     })
   );

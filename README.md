@@ -358,23 +358,38 @@ Creating an Action Stream
 
 - reacting to actions (selections) // merge, scan
 
-  <details>
+<details>
 
-  - create action stream
-    ![Alt text](test3/src/readmeAssets/createActionStream2.png)
-  - combine ActionStream with DataStream
-    ![Alt text](test3/src/readmeAssets/combineActionWData.png)
-  - emit value to the ActionStream
-    ![Alt text](test3/src/readmeAssets/emitValueToActionStream.png)
-  - ↓↓↓ // event emitter component.ts
-    ![Alt text](test3/src/readmeAssets/componentEmitter.png)
-  - ↓↓↓ // event emitter component.html
-    ![Alt text](test3/src/readmeAssets/componentEmitterHtml.png)
-  - ↓↓↓ // event emitter component.html - !!! change styles w ActionStream
-    ![Alt text](test3/src/readmeAssets/componentEmitterHtmlStyles.png)
-  - bind Observable with ChangeDetectionStrategy.OnPush
-  - res:
-    ![Alt text](test3/src/readmeAssets/detail-res-select.png)
+- create action stream
+  ![Alt text](test3/src/readmeAssets/createActionStream2.png)
+- combine ActionStream with DataStream
+  ![Alt text](test3/src/readmeAssets/combineActionWData.png)
+- emit value to the ActionStream
+  ![Alt text](test3/src/readmeAssets/emitValueToActionStream.png)
+- ↓↓↓ // event emitter component.ts
+  ![Alt text](test3/src/readmeAssets/componentEmitter.png)
+- ↓↓↓ // event emitter component.html
+  ![Alt text](test3/src/readmeAssets/componentEmitterHtml.png)
+- ↓↓↓ // event emitter component.html - !!! change styles w ActionStream
+  ![Alt text](test3/src/readmeAssets/componentEmitterHtmlStyles.png)
+- bind Observable with ChangeDetectionStrategy.OnPush
+- res:
+  ![Alt text](test3/src/readmeAssets/detail-res-select.png)
+
+</details>
+
+- display error msg w action stream & changeDetectionStrategy
+
+<details>
+
+- init stream
+  ![Alt text](test3/src/readmeAssets/errorMessageStream.png)
+- set value to stream
+  ![Alt text](test3/src/readmeAssets/setValueToStream.png)
+- bind observable w async pipe
+  ![Alt text](test3/src/readmeAssets/errorMsgWStreamDisplay.png)
+- res: UI Error Display
+  ![Alt text](test3/src/readmeAssets/UIerror.png)
 
 </details>
 
