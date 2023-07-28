@@ -2,8 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 import {
+  BehaviorSubject,
   catchError,
   combineLatest,
+  EMPTY,
   map,
   Observable,
   tap,
@@ -44,16 +46,24 @@ export class ProductService {
     )
   );
 
-  selectedProduct$ = this.productWithCategories$.pipe(
-    map((products) =>
-      products.find((product) => {
-        return product.id === 5;
-      })
+  private detailSelectedSubject = new BehaviorSubject(0);
+  detailSelectedAction$ = this.detailSelectedSubject.asObservable();
+
+  selectedProduct$ = combineLatest([
+    this.productWithCategories$,
+    this.detailSelectedAction$,
+  ]).pipe(
+    map(([products, selectedProductId]) =>
+      products.find((product) => product.id === selectedProductId)
     ),
     tap((data) => {
-      console.log('selectedProduct>>', data);
+      // console.log('selectedProductFromService>>', data);
     })
   );
+
+  onSelectedDetailProduct(selectedId: number) {
+    this.detailSelectedSubject.next(selectedId);
+  }
 
   constructor(
     private http: HttpClient,
