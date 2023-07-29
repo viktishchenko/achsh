@@ -10,6 +10,7 @@ import {
   merge,
   Observable,
   scan,
+  shareReplay,
   Subject,
   tap,
   throwError,
@@ -26,7 +27,7 @@ export class ProductService {
   private suppliersUrl = 'api/suppliers';
 
   products$ = this.http.get<Product[]>(this.productsUrl).pipe(
-    // tap((data) => console.log('Products: ', JSON.stringify(data))),
+    tap((data) => console.log('Products: ', JSON.stringify(data))),
     catchError(this.handleError)
   );
 
@@ -46,7 +47,8 @@ export class ProductService {
             searchKey: [product.productName],
           } as Product)
       )
-    )
+    ),
+    shareReplay(1)
   );
 
   private detailSelectedSubject = new BehaviorSubject(0);
@@ -60,8 +62,9 @@ export class ProductService {
       products.find((product) => product.id === selectedProductId)
     ),
     tap((data) => {
-      // console.log('selectedProductFromService>>', data);
-    })
+      console.log('selectedProductFromService>>', data?.productName);
+    }),
+    shareReplay(1)
   );
 
   private insertedProductSubject = new Subject<Product>();

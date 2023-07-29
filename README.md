@@ -418,4 +418,29 @@ Creating an Action Stream
 
 </details>
 
+## Caching Observables
+
+<details>
+
+- caching Observables
+  ![Alt text](test3/src/readmeAssets/cachObservable.png)
+- classic caching pattern
+  ![Alt text](test3/src/readmeAssets/classicCachingPattern.png)
+- declarative caching pattern
+  ![Alt text](test3/src/readmeAssets/declarativeCachingPattern.png)
+- shareReply used for
+  ![Alt text](test3/src/readmeAssets/shareReplyUseFor.png)
+- shareReply diagram
+  ![Alt text](test3/src/readmeAssets/shareReply.png)
+- share operator
+  ![Alt text](test3/src/readmeAssets/shareOperator.png)
+- shareReply usage (caching data)
+  ![Alt text](test3/src/readmeAssets/cachingDataCode.png)
+- shareReply usage (caching data)
+  ![Alt text](test3/src/readmeAssets/cachingDataCode2.png)
+- cache validation
+  ![Alt text](test3/src/readmeAssets/refreshCashData.png)
+
+</details>
+
 </details>

@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { throwError, Observable, catchError, tap } from 'rxjs';
+import { throwError, Observable, catchError, tap, shareReplay } from 'rxjs';
 import { ProductCategory } from './product-category';
 
 @Injectable({
@@ -13,7 +13,8 @@ export class ProductCategoryService {
   categories$ = this.http
     .get<ProductCategory[]>(this.productCategoriesUrl)
     .pipe(
-      // tap((data) => console.log('categories>>', data)),
+      tap((data) => console.log('categories>>', data)),
+      shareReplay(1),
       catchError(this.handleError)
     );
 
