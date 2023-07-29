@@ -443,4 +443,57 @@ Creating an Action Stream
 
 </details>
 
+## High-order Mapping Operators
+
+<details>
+
+- high-order mapping operators
+  ![Alt text](test3/src/readmeAssets/observableEmits.png)
+- observable return observable (not recomended technic)
+  ![Alt text](test3/src/readmeAssets/observableObservable.png)
+- RxJs Features (concatMap, mergeMap, switchMap)
+  ![Alt text](test3/src/readmeAssets/highOrderFKUP.png)
+- RxJs Features code
+  ![Alt text](test3/src/readmeAssets/hoMappingCode.png)
+- RxJs Features res
+  ![Alt text](test3/src/readmeAssets/hoMappingRes.png)
+- RxJs Features map nested subscription - bed practice
+  ![Alt text](test3/src/readmeAssets/mapNestedSubscription.png)
+- concatMap !!! SEQUENCE/ORDER !!!
+  ![Alt text](test3/src/readmeAssets/concatMap.png)
+- concatMap Diagram
+  ![Alt text](test3/src/readmeAssets/concatMapDiagram.png)
+- concatMap code (without nested subscription!!!)
+  ![Alt text](test3/src/readmeAssets/concatMapCode.png)
+- concatMap res
+  ![Alt text](test3/src/readmeAssets/concatMapRes.png)
+- mergeMap !!! PARALLEL/WITHOUT ORDER !!!
+  ![Alt text](test3/src/readmeAssets/mergeMap.png)
+- mergeMap Diagram
+  ![Alt text](test3/src/readmeAssets/mergeMapDiagram.png)
+- mergeMap code
+  ![Alt text](test3/src/readmeAssets/mergeMapCode.png)
+- mergeMap res
+  ![Alt text](test3/src/readmeAssets/mergeMapRes.png)
+- switchMap
+  ![Alt text](test3/src/readmeAssets/switchMap.png)
+- switchMap Diagram
+  ![Alt text](test3/src/readmeAssets/switchMapDiagram.png)
+- switchMap code
+  ![Alt text](test3/src/readmeAssets/switchMapCode.png)
+- switchMap res
+  ![Alt text](test3/src/readmeAssets/switchMapRes.png)
+
+---
+
+### mapping HOC Observable
+
+![Alt text](test3/src/readmeAssets/mappingHOCObservable.png)
+// or
+![Alt text](test3/src/readmeAssets/mappingHOCObservablePicture.png)
+// hom res
+![Alt text](test3/src/readmeAssets/hocRes.png)
+
+</details>
+
 </details>
