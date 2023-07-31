@@ -496,4 +496,17 @@ Creating an Action Stream
 
 </details>
 
+## Combining the Streams
+
+<details>
+
+- define suppliers data obserbable stream
+  ![Alt text](test3/src/readmeAssets/defineDataObservable.png)
+- combine datas
+  ![Alt text](test3/src/readmeAssets/combineDatas.png)
+- supplier component
+  ![Alt text](test3/src/readmeAssets/supplierComponent.png)
+
+</details>
+
 </details>

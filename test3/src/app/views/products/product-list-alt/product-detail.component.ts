@@ -1,10 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { Supplier } from '../../../suppliers/supplier';
-// import { Supplier } from '../../suppliers/supplier';
-import { Product } from '../product';
 
 import { ProductService } from '../product.service';
-import { EMPTY, catchError, of } from 'rxjs';
+import { EMPTY, catchError } from 'rxjs';
 
 @Component({
   selector: 'app-product-detail',
@@ -14,7 +11,13 @@ import { EMPTY, catchError, of } from 'rxjs';
 export class ProductDetailComponent {
   pageTitle = 'Product Detail';
   errorMessage = '';
-  productSuppliers: Supplier[] | null = null;
+
+  productSuppliers$ = this.productService.supplierSelectedProduct$.pipe(
+    catchError((err) => {
+      this.errorMessage = err;
+      return EMPTY;
+    })
+  );
 
   product$ = this.productService.selectedProduct$.pipe(
     catchError((err) => {

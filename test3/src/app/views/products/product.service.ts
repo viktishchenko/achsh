@@ -28,7 +28,7 @@ export class ProductService {
   private suppliersUrl = 'api/suppliers';
 
   products$ = this.http.get<Product[]>(this.productsUrl).pipe(
-    // tap((data) => console.log('Products: ', JSON.stringify(data))),
+    tap((data) => console.log('Products: ', JSON.stringify(data))),
     catchError(this.handleError)
   );
 
@@ -68,6 +68,17 @@ export class ProductService {
     shareReplay(1)
   );
 
+  supplierSelectedProduct$ = combineLatest([
+    this.selectedProduct$,
+    this.supplierService.suppliers$,
+  ]).pipe(
+    map(([selectedProduct, suppliers]) =>
+      suppliers.filter((supplier) =>
+        selectedProduct?.supplierIds?.includes(supplier.id)
+      )
+    )
+  );
+
   private insertedProductSubject = new Subject<Product>();
   productIncertedAction$ = this.insertedProductSubject.asObservable();
 
@@ -87,7 +98,7 @@ export class ProductService {
   constructor(
     private http: HttpClient,
     private productWithCategory: ProductCategoryService,
-    private supplierService: SupplierService
+    private supplierService: SupplierService // private supplierService: SupplierService
   ) {}
 
   addNewProduct(newProduct?: Product) {

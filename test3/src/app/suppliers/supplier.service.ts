@@ -10,6 +10,8 @@ import {
   tap,
   mergeMap,
   switchMap,
+  catchError,
+  shareReplay,
 } from 'rxjs';
 import { Supplier } from './supplier';
 
@@ -20,8 +22,7 @@ export class SupplierService {
   suppliersUrl = 'api/suppliers';
 
   /* ---HIGH-ORDER-MAPPING---START--- */
-
-  suppliersWithMap$ = of(1, 5, 8).pipe(
+  /*   suppliersWithMap$ = of(1, 5, 8).pipe(
     tap((id) => console.log('map>>', id)),
     map((id) => this.http.get<Supplier>(`${this.suppliersUrl}/${id}`))
   );
@@ -51,9 +52,16 @@ export class SupplierService {
     this.suppliersWithSwitchMap$.subscribe((item) =>
       console.log('switchMap result>>', item)
     );
-  }
-
+  } */
   /* ---HIGH-ORDER-MAPPING---END--- */
+
+  constructor(private http: HttpClient) {}
+
+  suppliers$ = this.http.get<Supplier[]>(this.suppliersUrl).pipe(
+    tap((data) => console.log('suppliers>>', data)),
+    shareReplay(1),
+    catchError(this.handleError)
+  );
 
   private handleError(err: HttpErrorResponse): Observable<never> {
     // in a real world app, we may send the server to some remote logging infrastructure
