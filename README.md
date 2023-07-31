@@ -517,6 +517,17 @@ Creating an Action Stream
 - own stream for title
   ![Alt text](test3/src/readmeAssets/streamForTitle.png)
 
+  ***
+
+  ### Combine multiple async pipes
+
+- Combine multiple async pipes
+  ![Alt text](test3/src/readmeAssets/combineMultipleAsyncPipes.png)
+- Combine multiple async pipes code.ts
+  ![Alt text](test3/src/readmeAssets/combineMultipleAsyncPipesCode.png)
+- Combine multiple async pipes code.html
+  ![Alt text](test3/src/readmeAssets/combineMultipleAsyncPipesCodehtml.png)
+
 </details>
 
 </details>

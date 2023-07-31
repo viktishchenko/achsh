@@ -6,6 +6,7 @@ import {
   catchError,
   combineLatest,
   EMPTY,
+  filter,
   forkJoin,
   map,
   merge,
@@ -86,6 +87,8 @@ export class ProductService {
 
   // just in time approach
   supplierSelectedProduct$ = this.selectedProduct$.pipe(
+    // filter empty selection
+    filter((product) => Boolean(product)),
     switchMap((selectedProduct) => {
       if (selectedProduct?.supplierIds) {
         return forkJoin(

@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 import { ProductService } from '../product.service';
-import { EMPTY, catchError, map } from 'rxjs';
+import { EMPTY, catchError, combineLatest, filter, map } from 'rxjs';
 
 @Component({
   selector: 'app-product-detail',
@@ -27,6 +27,20 @@ export class ProductDetailComponent {
 
   pageTitle$ = this.product$.pipe(
     map((p) => (p ? `Product Detail for: ${p.productName}` : null))
+  );
+
+  vm$ = combineLatest([
+    this.productSuppliers$,
+    this.product$,
+    this.pageTitle$,
+  ]).pipe(
+    // filter out any empty product selection
+    filter(([product]) => Boolean(product)),
+    map(([productSuppliers, product, pageTitle]) => ({
+      productSuppliers,
+      product,
+      pageTitle,
+    }))
   );
 
   constructor(private productService: ProductService) {}
