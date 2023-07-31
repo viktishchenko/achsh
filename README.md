@@ -506,6 +506,16 @@ Creating an Action Stream
   ![Alt text](test3/src/readmeAssets/combineDatas.png)
 - supplier component
   ![Alt text](test3/src/readmeAssets/supplierComponent.png)
+- related data stream
+  ![Alt text](test3/src/readmeAssets/relatedDataStream.png)
+- related data stream (Just in Time)
+  ![Alt text](test3/src/readmeAssets/RDSJustInTime.png)
+- get related data stream just in time with forkJoin
+  ![Alt text](test3/src/readmeAssets/RDSJustInTimeWForkJoin.png)
+- related data stream (Just in Time vs GET It All)
+  ![Alt text](test3/src/readmeAssets/JITvsGIA.png)
+- own stream for title
+  ![Alt text](test3/src/readmeAssets/streamForTitle.png)
 
 </details>
 
