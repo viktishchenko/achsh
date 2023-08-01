@@ -41,7 +41,7 @@ git push -u origin test3
 
 </details>
 
-- init app
+- init app + template-driven form example
 
 <details>
 
@@ -57,5 +57,21 @@ ng generate module app-routing --flat --module=app
 ### angular template-driven form example
 
 ![Alt text](test4/src/readmeAssets/TDFvsRF/tdf-example.png)
+
+</details>
+
+- reactive form e.g.
+
+<details>
+
+- reactive forms
+  ![Alt text](test4/src/readmeAssets/RFModel/reactiveForm.png)
+- create a formGroup
+  ![Alt text](test4/src/readmeAssets/RFModel/createFormGroup.png)
+
+```js
+// add component
+ng g c views/clients/client --flat --skip-tests --inline-style --dry-run
+```
 
 </details>
