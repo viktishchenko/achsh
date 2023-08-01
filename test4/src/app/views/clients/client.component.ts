@@ -8,22 +8,22 @@ import { FormGroup, FormControl } from '@angular/forms';
   styles: [],
 })
 export class ClientComponent implements OnInit {
-  pageTitle = 'Reactive form module';
+  pageTitle = 'Reactive form model';
 
-  customerForm!: FormGroup;
+  clientForm!: FormGroup;
   customer = new Customer();
 
   ngOnInit(): void {
-    this.customerForm = new FormGroup({
+    this.clientForm = new FormGroup({
       firstName: new FormControl(),
       lastName: new FormControl(),
       email: new FormControl(),
-      sendCatalog: new FormControl(true),
+      sendCatalog: new FormControl(false),
     });
   }
 
   save() {
-    console.log(this.customerForm);
-    console.log('Saved: ' + JSON.stringify(this.customerForm.value));
+    console.log(this.clientForm);
+    console.log('Saved: ' + JSON.stringify(this.clientForm.value));
   }
 }

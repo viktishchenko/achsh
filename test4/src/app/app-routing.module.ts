@@ -11,7 +11,7 @@ import { ClientComponent } from './views/clients/client.component';
     RouterModule.forRoot([
       { path: 'welcome', component: WelcomeComponent },
       { path: 'template-driven-forms', component: CustomerComponent },
-      { path: 'reactive-form-module', component: ClientComponent },
+      { path: 'reactive-form-model', component: ClientComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', component: PageNotFoundComponent },
     ]),

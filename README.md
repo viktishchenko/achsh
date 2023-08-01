@@ -74,4 +74,9 @@ ng generate module app-routing --flat --module=app
 ng g c views/clients/client --flat --skip-tests --inline-style --dry-run
 ```
 
+- binding form model
+  ![Alt text](test4/src/readmeAssets/RFModel/bindFormGroup.png)
+- accessing form model properties
+  ![Alt text](test4/src/readmeAssets/RFModel/formGroupAccessing.png)
+
 </details>
