@@ -40,3 +40,22 @@ git push -u origin test3
   ![Alt text](test4/src/readmeAssets/TDFvsRF/RForms.png)
 
 </details>
+
+- init app
+
+<details>
+
+```js
+// add components
+ng g c views/home/welcome --flat --skip-tests --inline-style --dry-run
+ng g c views/error-page/page-not-found --flat --skip-tests --inline-style --inline-template --dry-run
+ng g c views/customers/customer --flat --skip-tests --inline-style --dry-run
+// add routing
+ng generate module app-routing --flat --module=app
+```
+
+### angular template-driven form example
+
+![Alt text](test4/src/readmeAssets/TDFvsRF/tdf-example.png)
+
+</details>
