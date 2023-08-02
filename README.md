@@ -79,4 +79,18 @@ ng g c views/clients/client --flat --skip-tests --inline-style --dry-run
 - accessing form model properties
   ![Alt text](test4/src/readmeAssets/RFModel/formGroupAccessing.png)
 
+- setValue(require all fields)
+  ![Alt text](test4/src/readmeAssets/RFModel/setPatchValue.png)
+- patchValue(accepts a piece of data)
+  ![Alt text](test4/src/readmeAssets/RFModel/patchValue.png)
+
+---
+
+- formBuilder
+  ![Alt text](test4/src/readmeAssets/RFModel/formBuilder.png)
+- formBuilder steps
+  ![Alt text](test4/src/readmeAssets/RFModel/formBuilderSteps.png)
+- formBuilder formControl syntax
+  ![Alt text](test4/src/readmeAssets/RFModel/formControlSyntax.png)
+
 </details>
