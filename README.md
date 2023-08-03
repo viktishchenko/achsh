@@ -121,8 +121,12 @@ ng g c views/clients/client --flat --skip-tests --inline-style --dry-run
 - custom validator with parameters
   ![Alt text](test4/src/readmeAssets/validation/validatorWithParams.png)
 - custom validator with parameters (code)
-  ![Alt text](test4/src/readmeAssets/validation/validatorWithParams.png)
+  ![Alt text](test4/src/readmeAssets/validation/crossFieldValidation2.png)
 - cross-field validation nested formGroup
   ![Alt text](test4/src/readmeAssets/validation/crossFieldValidation.png)
+- cross-field validation (custom validator)
+  ![Alt text](test4/src/readmeAssets/validation/customValidationCode2.png)
+- form validation
+  ![Alt text](test4/src/readmeAssets/validation/formValidation.png)
 
 </details>
