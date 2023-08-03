@@ -94,3 +94,28 @@ ng g c views/clients/client --flat --skip-tests --inline-style --dry-run
   ![Alt text](test4/src/readmeAssets/RFModel/formControlSyntax.png)
 
 </details>
+
+- validation (reactive way)
+
+<details>
+
+- overview
+  ![Alt text](test4/src/readmeAssets/validation/validation.png)
+- create FormControls
+  ![Alt text](test4/src/readmeAssets/validation/formControls.png)
+- setting built-in validation rules
+  ![Alt text](test4/src/readmeAssets/validation/validationSettings.png)
+- runtime rules validation
+  ![Alt text](test4/src/readmeAssets/validation/runtimeValidation.png)
+- conditional validation (runtime)
+  ![Alt text](test4/src/readmeAssets/validation/dynamicValidation.png)
+- custom validation rules
+  ![Alt text](test4/src/readmeAssets/validation/customValidation.png)
+- custom validation code
+  ![Alt text](test4/src/readmeAssets/validation/customValidationCode.png)
+
+### basic validation
+
+![Alt text](test4/src/readmeAssets/validation/basic-custom-validation.png)
+
+</details>
