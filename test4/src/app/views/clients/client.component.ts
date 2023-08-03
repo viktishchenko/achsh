@@ -8,11 +8,16 @@ import {
   ValidatorFn,
 } from '@angular/forms';
 
-function ratingRange(c: AbstractControl): { [key: string]: boolean } | null {
-  if (c.value != undefined && (isNaN(c.value) || c.value < 1 || c.value > 5)) {
-    return { range: true };
-  }
-  return null;
+function ratingRange(min: number, max: number): ValidatorFn {
+  return (c: AbstractControl): { [key: string]: boolean } | null => {
+    if (
+      c.value != undefined &&
+      (isNaN(c.value) || c.value < min || c.value > max)
+    ) {
+      return { range: true };
+    }
+    return null;
+  };
 }
 
 @Component({
@@ -25,6 +30,7 @@ export class ClientComponent implements OnInit {
 
   clientForm!: FormGroup;
   customer = new Customer();
+  emailMessage = '';
 
   constructor(private fb: FormBuilder) {}
 
@@ -32,13 +38,19 @@ export class ClientComponent implements OnInit {
     this.clientForm = this.fb.group({
       firstName: ['', [Validators.required, Validators.minLength(3)]],
       lastName: ['', [Validators.required, Validators.maxLength(50)]],
-      email: [
-        '',
-        [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+')],
-      ],
+      emailGroup: this.fb.group({
+        email: [
+          '',
+          [
+            Validators.required,
+            Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+'),
+          ],
+        ],
+        confirmEmail: ['', Validators.required],
+      }),
       phone: '',
       notification: 'email',
-      rating: ['', ratingRange],
+      rating: ['', ratingRange(1, 5)],
       sendCatalog: true,
     });
   }
