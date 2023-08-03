@@ -8,7 +8,7 @@
       <div class="row justify-content-between">
         <div *ngIf="categories$ | async as categories" class="col">
           <select
-            style="max-width: 220px"
+            style="max-width: 220px; min-width: 100px"
             class="form-control"
             (change)="onSelected($any($event.target).value)"
           >
