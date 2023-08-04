@@ -165,3 +165,16 @@ ng g c views/clients/client --flat --skip-tests --inline-style --dry-run
 ![Alt text](test4/src/readmeAssets/reacting/TDFvsReactive.png)
 
 </details>
+
+- Dynamically Duplicate Input Elements
+
+<details>
+
+- form groups
+  ![Alt text](test4/src/readmeAssets/reactiveDuo/formGroup.png)
+- formGroup benefits
+  ![Alt text](test4/src/readmeAssets/reactiveDuo/formGroupBenefits.png)
+- init formGroup
+  ![Alt text](test4/src/readmeAssets/reactiveDuo/formGroupCode.png)
+
+</details>

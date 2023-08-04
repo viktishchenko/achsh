@@ -73,6 +73,14 @@ export class ClientComponent implements OnInit {
       notification: 'email',
       rating: ['', ratingRange(1, 5)],
       sendCatalog: true,
+      addresses: this.fb.group({
+        addressType: 'home',
+        street1: '',
+        street2: '',
+        city: '',
+        state: '',
+        zip: '',
+      }),
     });
 
     //--- Observable watching notification ---//
