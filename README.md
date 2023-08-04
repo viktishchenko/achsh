@@ -130,3 +130,18 @@ ng g c views/clients/client --flat --skip-tests --inline-style --dry-run
   ![Alt text](test4/src/readmeAssets/validation/formValidation.png)
 
 </details>
+
+- Reacting to Changes ( Whatching, Reacting, Reactive Transformation)
+
+<details>
+
+- watching
+  ![Alt text](test4/src/readmeAssets/reacting/observableReacting.png)
+- watching observable
+  ![Alt text](test4/src/readmeAssets/reacting/watchingObservable.png)
+- watching observable code
+  ![Alt text](test4/src/readmeAssets/reacting/watchingObservableCode.png)
+- reacting var
+  ![Alt text](test4/src/readmeAssets/reacting/reactingVariation.png)
+
+</details>

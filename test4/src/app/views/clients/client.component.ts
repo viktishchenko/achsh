@@ -68,6 +68,11 @@ export class ClientComponent implements OnInit {
       rating: ['', ratingRange(1, 5)],
       sendCatalog: true,
     });
+
+    //--- Observable watching ---//
+    this.clientForm.get('notification')?.valueChanges.subscribe((value) => {
+      this.setNotification(value);
+    });
   }
 
   save() {
