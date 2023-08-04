@@ -131,6 +131,8 @@ ng g c views/clients/client --flat --skip-tests --inline-style --dry-run
 
 </details>
 
+---
+
 - Reacting to Changes ( Whatching, Reacting, Reactive Transformation)
 
 <details>
@@ -148,5 +150,18 @@ ng g c views/clients/client --flat --skip-tests --inline-style --dry-run
     ![Alt text](test4/src/readmeAssets/reacting/storeDataInComponent.png)
   - add watcher and handler
     ![Alt text](test4/src/readmeAssets/reacting/watcherHandler.png)
+
+---
+
+- reactive transformation
+  ![Alt text](test4/src/readmeAssets/reacting/debounceTime.png)
+- reactive transformation
+  ![Alt text](test4/src/readmeAssets/reacting/throttleAndOther.png)
+- reactive transformation with debounceTime
+  ![Alt text](test4/src/readmeAssets/reacting/reactingWithDebounce.png)
+
+### template-driven vs reactive
+
+![Alt text](test4/src/readmeAssets/reacting/TDFvsReactive.png)
 
 </details>

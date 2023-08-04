@@ -83,7 +83,7 @@ export class ClientComponent implements OnInit {
 
     //--- Observable watcher messages---//
     const emailControl = this.clientForm.get('emailGroup.email');
-    emailControl?.valueChanges.subscribe((value) => {
+    emailControl?.valueChanges.pipe(debounceTime(1000)).subscribe((value) => {
       this.setMessage(emailControl);
     });
   }
@@ -92,7 +92,14 @@ export class ClientComponent implements OnInit {
     this.emailMessage = '';
     if ((c.touched || c.dirty) && c.errors) {
       this.emailMessage = Object.keys(c.errors)
-        .map((key) => this.validationMessages[key])
+        .map((key) => {
+          console.log('key>>', key);
+          console.log(
+            'Boolean(this.emailMessage)>>',
+            Boolean(this.emailMessage)
+          );
+          return this.validationMessages[key];
+        })
         .join(' ');
     }
   }
