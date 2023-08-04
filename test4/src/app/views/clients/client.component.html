@@ -78,21 +78,11 @@
                   !clientForm.get('emailGroup.email')!.valid
               }"
             />
-            <!-- <span class="invalid-feedback">
-              [ngClass]="{ 'is-invalid': emailMessage }"
+            <span
+              class="invalid-feedback"
+              *ngIf="clientForm.get('emailGroup.email')?.errors"
+            >
               {{ emailMessage }}
-            </span> -->
-            <span class="invalid-feedback">
-              <span
-                *ngIf="clientForm.get('emailGroup.email')!.errors?.['required']"
-              >
-                Please enter your email address.
-              </span>
-              <span
-                *ngIf="clientForm.get('emailGroup.email')!.errors?.['pattern']"
-              >
-                Please enter a valid email address.
-              </span>
             </span>
           </div>
         </div>

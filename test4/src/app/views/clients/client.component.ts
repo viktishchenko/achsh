@@ -7,6 +7,7 @@ import {
   AbstractControl,
   ValidatorFn,
 } from '@angular/forms';
+import { debounceTime } from 'rxjs';
 
 function emailMatcher(c: AbstractControl) {
   let emailControl = c.get('email');
@@ -42,7 +43,12 @@ export class ClientComponent implements OnInit {
 
   clientForm!: FormGroup;
   customer = new Customer();
-  emailMessage = '';
+  emailMessage!: string;
+
+  private validationMessages: any = {
+    required: 'Please enter your email address.',
+    pattern: 'Please enter a valid email address.',
+  };
 
   constructor(private fb: FormBuilder) {}
 
@@ -69,10 +75,26 @@ export class ClientComponent implements OnInit {
       sendCatalog: true,
     });
 
-    //--- Observable watching ---//
+    //--- Observable watching notification ---//
     this.clientForm.get('notification')?.valueChanges.subscribe((value) => {
+      // console.log('value>>', value); // text/email
       this.setNotification(value);
     });
+
+    //--- Observable watcher messages---//
+    const emailControl = this.clientForm.get('emailGroup.email');
+    emailControl?.valueChanges.subscribe((value) => {
+      this.setMessage(emailControl);
+    });
+  }
+
+  setMessage(c: AbstractControl): void {
+    this.emailMessage = '';
+    if ((c.touched || c.dirty) && c.errors) {
+      this.emailMessage = Object.keys(c.errors)
+        .map((key) => this.validationMessages[key])
+        .join(' ');
+    }
   }
 
   save() {

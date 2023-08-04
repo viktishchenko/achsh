@@ -143,5 +143,10 @@ ng g c views/clients/client --flat --skip-tests --inline-style --dry-run
   ![Alt text](test4/src/readmeAssets/reacting/watchingObservableCode.png)
 - reacting var
   ![Alt text](test4/src/readmeAssets/reacting/reactingVariation.png)
+- reacting displaying validation messages
+  - store data in component class
+    ![Alt text](test4/src/readmeAssets/reacting/storeDataInComponent.png)
+  - add watcher and handler
+    ![Alt text](test4/src/readmeAssets/reacting/watcherHandler.png)
 
 </details>
