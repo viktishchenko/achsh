@@ -176,5 +176,15 @@ ng g c views/clients/client --flat --skip-tests --inline-style --dry-run
   ![Alt text](test4/src/readmeAssets/reactiveDuo/formGroupBenefits.png)
 - init formGroup
   ![Alt text](test4/src/readmeAssets/reactiveDuo/formGroupCode.png)
+- form array
+  ![Alt text](test4/src/readmeAssets/reactiveDuo/formArrayConcept.png)
+- form array code
+  ![Alt text](test4/src/readmeAssets/reactiveDuo/formArrayCode.png)
+- looping through form array
+  ![Alt text](test4/src/readmeAssets/reactiveDuo/loopingThroughFormArray.png)
+- duplicate the input elements {with request the copy inputs elements}
+  ![Alt text](test4/src/readmeAssets/reactiveDuo/duplicateInputElements.png)
+- duplicate form sheme
+  ![Alt text](test4/src/readmeAssets/reactiveDuo/duplicateFormSheme.png)
 
 </details>

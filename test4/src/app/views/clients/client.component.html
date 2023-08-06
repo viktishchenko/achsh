@@ -73,16 +73,7 @@
               formControlName="email"
               [ngClass]="{ 'is-invalid': emailMessage }"
             />
-            <!-- [ngClass]="{
-                'is-invalid':
-                  (clientForm.get('emailGroup.email')!.touched ||
-                    clientForm.get('emailGroup.email')!.dirty) &&
-                  !clientForm.get('emailGroup.email')!.valid
-              }" -->
-            <span
-              class="invalid-feedback"
-              *ngIf="clientForm.get('emailGroup.email')?.errors"
-            >
+            <span class="invalid-feedback">
               {{ emailMessage }}
             </span>
           </div>
@@ -206,151 +197,171 @@
       </div>
 
       <div *ngIf="clientForm.get('sendCatalog')?.value">
-        <div formArrayName="addresses">
-          <div></div>
-          <!-- [formGroupName]="i" -->
-          <!-- *ngFor="let address of addresses.controls; let i = index" -->
-          <div class="form-group row mb-2">
-            <label class="col-md-2 col-form-label pt-0">Address Type</label>
-            <div class="col-md-8">
-              <div class="form-check form-check-inline">
-                <label class="form-check-label">
-                  <input
-                    class="form-check-input"
-                    id="addressType1Id"
-                    type="radio"
-                    value="home"
-                    formControlName="addressType"
-                  />
-                  Home
-                </label>
-              </div>
-              <div class="form-check form-check-inline">
-                <label class="form-check-label">
-                  <input
-                    class="form-check-input"
-                    id="addressType1Id"
-                    type="radio"
-                    value="work"
-                    formControlName="addressType"
-                  />
-                  Work
-                </label>
-              </div>
-              <div class="form-check form-check-inline">
-                <label class="form-check-label">
-                  <input
-                    class="form-check-input"
-                    id="addressType1Id"
-                    type="radio"
-                    value="other"
-                    formControlName="addressType"
-                  />
-                  Other
-                </label>
+        <div
+          formArrayName="addresses"
+          *ngFor="let address of addresses.controls; let i = index"
+        >
+          <div [formGroupName]="i">
+            <div class="form-group row mb-2">
+              <label class="col-md-2 col-form-label pt-0">Address Type</label>
+              <div class="col-md-8">
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label">
+                    <input
+                      class="form-check-input"
+                      id="addressType1Id"
+                      type="radio"
+                      value="home"
+                      formControlName="addressType"
+                    />
+                    Home
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label">
+                    <input
+                      class="form-check-input"
+                      id="addressType1Id"
+                      type="radio"
+                      value="work"
+                      formControlName="addressType"
+                    />
+                    Work
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label">
+                    <input
+                      class="form-check-input"
+                      id="addressType1Id"
+                      type="radio"
+                      value="other"
+                      formControlName="addressType"
+                    />
+                    Other
+                  </label>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="form-group row mb-2">
-            <!-- attr.for="{{ 'street1Id' + i }}" -->
-            <label class="col-md-2 col-form-label">Street Address 1</label>
-            <div class="col-md-8">
-              <!-- id="{{ 'street1Id' + i }}" -->
-              <input
-                class="form-control"
-                type="text"
-                placeholder="Street address (required)"
-                formControlName="street1"
-              />
-              <!-- [ngClass]="{
+            <div class="form-group row mb-2">
+              <label
+                class="col-md-2 col-form-label"
+                attr.for="{{ 'street1Id' + i }}"
+              >
+                Street Address 1</label
+              >
+              <div class="col-md-8">
+                <input
+                  id="{{ 'street1Id' + i }}"
+                  class="form-control"
+                  type="text"
+                  placeholder="Street address (required)"
+                  formControlName="street1"
+                  [ngClass]="{
                     'is-invalid':
                       (address.get('street1')?.touched ||
                         address.get('street1')?.dirty) &&
                       !address.get('street1')?.valid
-                  }" -->
-              <span class="invalid-feedback">
-                <!-- <span *ngIf="address.get('street1')?.errors?.required"> -->
-                Please enter your street address.
-                <!-- </span> -->
-              </span>
+                  }"
+                />
+                <span class="invalid-feedback">
+                  <span *ngIf="address.get('street1')?.errors?.['required']">
+                    Please enter your street address.
+                  </span>
+                </span>
+              </div>
             </div>
-          </div>
 
-          <div class="form-group row mb-2">
-            <!-- attr.for="{{ 'street2Id' + i }}" -->
-            <label class="col-md-2 col-form-label">Street Address 2</label>
-            <div class="col-md-8">
-              <!-- id="{{ 'street2Id' + i }}" -->
-              <input
-                class="form-control"
-                type="text"
-                placeholder="Street address (second line)"
-                formControlName="street2"
-              />
+            <div class="form-group row mb-2">
+              <label
+                class="col-md-2 col-form-label"
+                attr.for="{{ 'street2Id' + i }}"
+                >Street Address 2</label
+              >
+              <div class="col-md-8">
+                <input
+                  id="{{ 'street2Id' + i }}"
+                  class="form-control"
+                  type="text"
+                  placeholder="Street address (second line)"
+                  formControlName="street2"
+                />
+              </div>
             </div>
-          </div>
 
-          <div class="form-group row mb-2">
-            <!-- attr.for="{{ 'cityId' + i }}" -->
-            <label class="col-md-2 col-form-label">City, State, Zip Code</label>
-            <div class="col-md-3">
-              <!-- id="{{ 'cityId' + i }}" -->
-              <input
-                class="form-control"
-                type="text"
-                placeholder="City"
-                formControlName="city"
-              />
-            </div>
-            <div class="col-md-3">
-              <!-- id="{{ 'stateId' + i }}" -->
-              <select class="form-control" formControlName="state">
-                <option value="" disabled selected hidden>
-                  Select a State...
-                </option>
-                <option value="AL">Alabama</option>
-                <option value="AK">Alaska</option>
-                <option value="AZ">Arizona</option>
-                <option value="AR">Arkansas</option>
-                <option value="CA">California</option>
-                <option value="CO">Colorado</option>
-                <option value="WI">Wisconsin</option>
-                <option value="WY">Wyoming</option>
-              </select>
-            </div>
-            <div class="col-md-2">
-              <!-- id="{{ 'zipId' + i }}" -->
-              <input
-                class="form-control"
-                type="number"
-                placeholder="Zip Code"
-                formControlName="zip"
-              />
+            <div class="form-group row mb-2">
+              <label
+                class="col-md-2 col-form-label"
+                attr.for="{{ 'cityId' + i }}"
+                >City, State, Zip Code</label
+              >
+              <div class="col-md-3 mb-2">
+                <input
+                  class="form-control"
+                  id="{{ 'cityId' + i }}"
+                  type="text"
+                  placeholder="City"
+                  formControlName="city"
+                />
+              </div>
+              <div class="col-md-3 mb-2">
+                <select
+                  class="form-control"
+                  id="{{ 'stateId' + i }}"
+                  formControlName="state"
+                >
+                  <option value="" disabled selected hidden>
+                    Select a State...
+                  </option>
+                  <option value="AL">Alabama</option>
+                  <option value="AK">Alaska</option>
+                  <option value="AZ">Arizona</option>
+                  <option value="AR">Arkansas</option>
+                  <option value="CA">California</option>
+                  <option value="CO">Colorado</option>
+                  <option value="WI">Wisconsin</option>
+                  <option value="WY">Wyoming</option>
+                </select>
+              </div>
+              <div class="col-md-2 mb-2">
+                <input
+                  class="form-control"
+                  id="{{ 'zipId' + i }}"
+                  type="number"
+                  placeholder="Zip Code"
+                  formControlName="zip"
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="form-group row mb-2">
-        <div class="col-md-4">
-          <button class="btn btn-outline-primary" type="button">
-            Add Another Address
-          </button>
-          <!-- [title]="
-              addresses.valid
-                ? 'Add another mailing address'
-                : 'Disabled until the existing address data is valid'
-            "
-            [disabled]="!addresses.valid"
-            (click)="addAddress()" -->
+        <div class="form-group row mb-2">
+          <div class="col-md-4">
+            <fieldset>
+              <button
+                class="btn btn-outline-primary"
+                type="button"
+                [title]="
+                  addresses.valid
+                    ? 'Add another mailing address'
+                    : 'Disabled until the existing address data is valid'
+                "
+                [disabled]="!addresses.valid"
+                (click)="addAddress()"
+              >
+                Add Another Address
+              </button>
+            </fieldset>
+          </div>
         </div>
       </div>
 
       <div class="form-group row mb-2">
         <div class="offset-md-2 col-md-4">
           <button
-            class="btn btn-primary mr-3"
+            class="btn btn-primary me-3"
             type="submit"
             style="width: 80px"
             [title]="
@@ -376,4 +387,4 @@
 </div>
 <br />Dirty: {{ clientForm.dirty }} <br />Touched: {{ clientForm.touched }}
 <br />Valid: {{ clientForm.valid }} <br />Value: {{ clientForm.value | json }}
-<!-- <br />Street: {{ addresses.get("0.street1")?.value }} <br />&nbsp; -->
+<br />Street: {{ addresses.get("0.street1")?.value }} <br />&nbsp;

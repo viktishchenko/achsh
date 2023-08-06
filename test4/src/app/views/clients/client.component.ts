@@ -6,6 +6,7 @@ import {
   Validators,
   AbstractControl,
   ValidatorFn,
+  FormArray,
 } from '@angular/forms';
 import { debounceTime } from 'rxjs';
 
@@ -45,6 +46,10 @@ export class ClientComponent implements OnInit {
   customer = new Customer();
   emailMessage!: string;
 
+  get addresses(): FormArray {
+    return <FormArray>this.clientForm.get('addresses');
+  }
+
   private validationMessages: any = {
     required: 'Please enter your email address.',
     pattern: 'Please enter a valid email address.',
@@ -73,19 +78,11 @@ export class ClientComponent implements OnInit {
       notification: 'email',
       rating: ['', ratingRange(1, 5)],
       sendCatalog: true,
-      addresses: this.fb.group({
-        addressType: 'home',
-        street1: '',
-        street2: '',
-        city: '',
-        state: '',
-        zip: '',
-      }),
+      addresses: this.fb.array([this.buildAdress()]),
     });
 
     //--- Observable watching notification ---//
     this.clientForm.get('notification')?.valueChanges.subscribe((value) => {
-      // console.log('value>>', value); // text/email
       this.setNotification(value);
     });
 
@@ -96,16 +93,25 @@ export class ClientComponent implements OnInit {
     });
   }
 
+  addAddress(): void {
+    this.addresses.push(this.buildAdress());
+  }
+  buildAdress(): FormGroup {
+    return this.fb.group({
+      addressType: 'home',
+      street1: ['', Validators.required],
+      street2: '',
+      city: '',
+      state: '',
+      zip: '',
+    });
+  }
+
   setMessage(c: AbstractControl): void {
     this.emailMessage = '';
     if ((c.touched || c.dirty) && c.errors) {
       this.emailMessage = Object.keys(c.errors)
         .map((key) => {
-          console.log('key>>', key);
-          console.log(
-            'Boolean(this.emailMessage)>>',
-            Boolean(this.emailMessage)
-          );
           return this.validationMessages[key];
         })
         .join(' ');
