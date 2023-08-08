@@ -21,3 +21,21 @@ ng g c views/error-page/page-not-found --inline-style --flat --skip-tests --inli
 ![Alt text](test5/src/readmeAssets/initWRouting.png)
 
 </details>
+
+- init data
+
+<details>
+
+```js
+//add server
+npm i angular-in-memory-web-api
+// add service
+ng g s services/products --skip-tests --dry-run
+// add interface
+ng g i models/products --dry-run
+// add data
+// add HTTP
+
+```
+
+</details>
