@@ -41,4 +41,8 @@ ng g i models/products --dry-run
 
 ![Alt text](test5/src/readmeAssets/productDataStream.png)
 
+// add page layout
+
+![Alt text](test5/src/readmeAssets/pageLayout.png)
+
 </details>

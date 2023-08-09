@@ -1,4 +1,77 @@
-<p>product-list works!</p>
-<div class="test" *ngIf="products$ | async as products">
-  {{ products | json }}
+<div class="card" *ngIf="products$ | async as products">
+  <div class="card-header">
+    {{ pageTitle | titlecase }}
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-2">Filtred by:</div>
+      <div class="col-md-4">
+        <input type="text" />
+      </div>
+    </div>
+    <div class="row"></div>
+    <hr />
+    <div class="row"></div>
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">
+              <button
+                title="{{ !showImage ? 'show images' : 'hide images' }}"
+                style="white-space: nowrap"
+                (click)="toggleImage()"
+                class="btn btn-primary btn-sm"
+              >
+                {{ showImage ? "Hide" : "Show" }}
+                <i [hidden]="showImage" class="bi bi-eye"></i>
+                <i [hidden]="!showImage" class="bi bi-eye-slash"></i>
+              </button>
+            </th>
+            <th scope="col">Product</th>
+            <th scope="col">Code</th>
+            <th scope="col">Available</th>
+            <th scope="col">Price</th>
+            <th scope="col">Rating</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody *ngIf="products">
+          <tr *ngFor="let product of products">
+            <td>
+              <img
+                *ngIf="showImage"
+                style="width: 50px"
+                [style.margin.px]="imgPadding"
+                src="{{ product.imageUrl }}"
+                alt="{{ product.productName }}"
+              />
+            </td>
+            <td>
+              <a
+                title="{{ product.productName }} Details"
+                routerLink="{{ product.id }}"
+                >{{ product.productName }}</a
+              >
+            </td>
+            <td>
+              {{ product.productCode | lowercase }}
+            </td>
+            <td>{{ product.releaseDate }}</td>
+            <td>{{ product.price | currency }}</td>
+            <td>{{ product.starRating }}</td>
+            <td>
+              <button
+                title="{{ product.productName }} edit"
+                class="btn btn-primary btn-sm"
+              >
+                Edit
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card-footer text-muted">footer</div>
 </div>

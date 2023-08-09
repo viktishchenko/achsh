@@ -9,8 +9,11 @@ import { ProductsService } from 'src/app/services/products.service';
   styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent {
+  showImage = true;
+  pageTitle = 'Product list';
   errorMessage: string = '';
   sub!: Subscription;
+  imgPadding = 5;
 
   constructor(private productService: ProductsService) {}
 
@@ -20,4 +23,8 @@ export class ProductListComponent {
       return EMPTY;
     })
   );
+
+  toggleImage() {
+    this.showImage = !this.showImage;
+  }
 }
