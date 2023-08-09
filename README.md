@@ -35,7 +35,10 @@ ng g s services/products --skip-tests --dry-run
 ng g i models/products --dry-run
 // add data
 // add HTTP
+// implements InMemoryWebApiModule, dataStream, display data
 
 ```
+
+![Alt text](test5/src/readmeAssets/productDataStream.png)
 
 </details>
