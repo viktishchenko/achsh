@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { EMPTY, catchError } from 'rxjs';
 import { ProductsService } from 'src/app/services/products.service';
+import { ConvertToSpacePipe } from 'src/app/shared/convert-to-space.pipe';
 
 @Component({
   selector: 'app-product-list',

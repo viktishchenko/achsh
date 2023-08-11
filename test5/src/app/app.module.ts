@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './views/home/welcome.component';
 import { PageNotFoundComponent } from './views/error-page/page-not-found.component';
 import { ProductListComponent } from './views/products/product-list/product-list.component';
+import { ConvertToSpacePipe } from './shared/convert-to-space.pipe';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ProductListComponent } from './views/products/product-list/product-list
     WelcomeComponent,
     PageNotFoundComponent,
     ProductListComponent,
+    ConvertToSpacePipe,
   ],
   imports: [
     BrowserModule,
