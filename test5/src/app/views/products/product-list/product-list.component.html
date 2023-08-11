@@ -4,9 +4,9 @@
   </div>
   <div class="card-body">
     <div class="row">
-      <div class="col-md-2">Filtred by:</div>
+      <div class="col-md-2">Filtred by: {{ filteredListInput }}</div>
       <div class="col-md-4">
-        <input type="text" />
+        <input type="text" [(ngModel)]="filteredListInput" />
       </div>
     </div>
     <div class="row"></div>

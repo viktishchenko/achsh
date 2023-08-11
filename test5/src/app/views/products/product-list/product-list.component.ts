@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { EMPTY, Subscription, catchError } from 'rxjs';
-import { IProduct } from 'src/app/models/product';
+import { Component } from '@angular/core';
+import { EMPTY, catchError } from 'rxjs';
 import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
@@ -12,8 +11,8 @@ export class ProductListComponent {
   showImage = true;
   pageTitle = 'Product list';
   errorMessage: string = '';
-  sub!: Subscription;
   imgPadding = 5;
+  filteredListInput = '';
 
   constructor(private productService: ProductsService) {}
 

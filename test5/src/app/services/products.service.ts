@@ -12,7 +12,7 @@ export class ProductsService {
   constructor(private http: HttpClient) {}
 
   products$ = this.http.get<IProduct[]>(this.productUrl).pipe(
-    tap((data) => console.log('Products: ', JSON.stringify(data))),
+    // tap((data) => console.log('Products: ', JSON.stringify(data))),
     catchError(this.handleError)
   );
 
