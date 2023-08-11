@@ -45,4 +45,12 @@ ng g i models/products --dry-run
 
 ![Alt text](test5/src/readmeAssets/pageLayout.png)
 
+```js
+// add 2way binding input
+// add custom pipe
+ng g p shared/convert-to-space --skip-tests --dry-run
+// implements simple filter logic
+
+```
+
 </details>

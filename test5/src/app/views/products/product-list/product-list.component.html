@@ -9,11 +9,15 @@
         <input type="text" [(ngModel)]="filteredListInput" />
       </div>
     </div>
-    <div class="row"></div>
     <hr />
-    <div class="row"></div>
-    <div class="table-responsive">
-      <table class="table table-hover">
+    <div
+      *ngIf="filteredProducts$ | async as filteredProducts"
+      class="table-responsive"
+    >
+      <table
+        *ngIf="filteredProducts.length; else elseBlock"
+        class="table table-hover"
+      >
         <thead>
           <tr>
             <th scope="col">
@@ -36,8 +40,8 @@
             <th scope="col"></th>
           </tr>
         </thead>
-        <tbody *ngIf="products">
-          <tr *ngFor="let product of products">
+        <tbody>
+          <tr *ngFor="let product of filteredProducts">
             <td>
               <img
                 *ngIf="showImage"
@@ -72,6 +76,7 @@
         </tbody>
       </table>
     </div>
+    <ng-template #elseBlock>Sorry, nothing to display.</ng-template>
   </div>
   <div class="card-footer text-muted">footer</div>
 </div>
