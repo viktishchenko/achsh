@@ -20,4 +20,6 @@ git push -u origin test6
 
 ```
 
+![Alt text](test6/src/readmeAssets/basic-layout.png)
+
 </details>

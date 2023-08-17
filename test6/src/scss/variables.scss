@@ -1,0 +1,18 @@
+$textDark: #282828;
+$textDarkLight: #666f78;
+$textWhite: #fff;
+$textWhiteLight: #e5e5e5;
+$textGrayLight: #e8ebed;
+$backgroundColor: #f5f6f7;
+$bodyFont: "Moscow-sans", sans-serif;
+$maxWidth: 1600px;
+$mainBg: #f5f6f7;
+$underscore: #c4c4c4;
+$maxWidth: 1600px;
+
+@mixin font($size, $height: $size, $weight: bold, $style: normal) {
+  font-size: $size;
+  font-style: $style;
+  font-weight: $weight;
+  line-height: $height;
+}

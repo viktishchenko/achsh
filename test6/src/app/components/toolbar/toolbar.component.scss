@@ -1,0 +1,38 @@
+@import "../../../scss/variables.scss";
+
+.mat-toolbar {
+  position: fixed;
+  height: 70px;
+  padding: 0;
+}
+
+.nav-tool-item {
+  display: none;
+}
+
+.account {
+  display: flex;
+  justify-content: end;
+  margin-right: 40px;
+}
+
+.mat-sidenav {
+  border-top: 1px solid $underscore;
+}
+
+.mat-sidenav .mat-icon {
+  color: $textWhite;
+}
+
+@media (max-width: 1024px) {
+  .mat-toolbar {
+    height: 55px;
+  }
+  .nav-tool-item {
+    display: flex;
+    align-items: center;
+  }
+  .account {
+    margin-right: 54px;
+  }
+}

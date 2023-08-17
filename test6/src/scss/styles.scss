@@ -1,0 +1,97 @@
+@import "../scss/theme.scss";
+@import "../scss/variables.scss";
+
+@font-face {
+  font-family: $bodyFont;
+  src: url("../assets/fonts/moscowsansregular.ttf");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+body {
+  font-family: $bodyFont;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  font-weight: normal;
+  height: 100%;
+}
+
+.header {
+  justify-content: end;
+}
+
+.container {
+  max-width: $maxWidth;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.mat-drawer-content {
+  top: 70px;
+}
+
+.mat-drawer-container {
+  overflow: unset;
+}
+
+.mat-sidenav-container {
+  display: flex;
+  flex: 1 1 auto;
+}
+
+.mat-sidenav-content {
+  padding: 25px 40px 0;
+  background-color: $mainBg;
+}
+
+.mat-drawer.mat-drawer-side {
+  background-color: map-get($rm-test-accent, 500);
+  width: 273px;
+  top: 70px !important;
+}
+
+.header {
+  top: 0;
+  z-index: 1000;
+}
+
+@media (max-width: 1440px) {
+  .mat-drawer.mat-drawer-side {
+    width: 263px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .mat-sidenav {
+    top: 70px;
+  }
+  .mat-drawer.mat-drawer-side {
+    z-index: 2;
+    top: 55px !important;
+  }
+  .mat-drawer-side {
+    width: 263px;
+  }
+  .mat-drawer-content {
+    top: 55px !important;
+  }
+}
+
+@media (max-width: 767px) {
+}

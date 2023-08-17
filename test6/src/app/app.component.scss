@@ -1,1 +1,37 @@
+@import "../scss/variables.scss";
 
+// Sidebar
+
+.parent-menu-wrapper {
+  padding-left: 45px;
+}
+
+.mdc-list-item.mdc-list-item--with-one-line {
+  height: 80px;
+}
+
+.sidebar-menu {
+  display: flex;
+  align-items: center;
+  color: $textWhite;
+}
+
+.sidebar-menu__title {
+  @include font(2rem, 2.6rem, 700);
+  color: $textWhite;
+}
+
+.sidebar-menu__subtitle {
+  @include font(1.6rem, 2.3rem, 300);
+  color: $textWhiteLight;
+}
+
+.mat-sidenav .mat-icon {
+  color: #fff;
+  margin-left: 15px;
+  transform: scale(0.9);
+}
+
+.underscore {
+  border-bottom: 1px solid $underscore;
+}
