@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-toolbar',
@@ -17,5 +18,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./toolbar.component.scss'],
 })
 export class ToolbarComponent {
-  @Input() sidenav: any;
+  @Input()
+  sidenav!: MatSidenav;
 }
