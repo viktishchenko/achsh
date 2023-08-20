@@ -83,3 +83,5 @@ constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
 </details>
 
 </details>
+
+- add custom icon service

@@ -1,23 +1,39 @@
 <app-toolbar [sidenav]="sidenav"></app-toolbar>
 <mat-sidenav-container class="container">
   <mat-sidenav [opened]="isSidenavOpen" #sidenav mode="side">
-    <mat-list role="list">
-      <mat-list-item role="listitem" class="underscore">
-        <div class="parent-menu-wrapper">
-          <div class="sidebar-menu">
-            <span class="sidebar-menu__title" *ngIf="isExpanded || isShowing"
-              >Суперагент</span
-            >
-            <mat-icon class="menu-button">arrow_drop_down</mat-icon>
-          </div>
-          <span class="sidebar-menu__subtitle" *ngIf="isExpanded || isShowing"
-            >Банк ВТБ(ПАО)</span
+    <mat-divider></mat-divider>
+    <button mat-menu-item>
+      <mat-icon>manage_accounts</mat-icon>
+      Иванов И.И
+    </button>
+    <mat-divider></mat-divider>
+    <button mat-menu-item>
+      <mat-icon [svgIcon]="'icons8-management'"></mat-icon>
+      Администрирование
+    </button>
+    <mat-divider></mat-divider>
+    <button mat-menu-item>
+      <div class="parent-menu-wrapper">
+        <div class="sidebar-menu">
+          <span class="sidebar-menu__title" *ngIf="isExpanded || isShowing"
+            >Суперагент</span
           >
+          <mat-icon class="menu-button">arrow_drop_down</mat-icon>
         </div>
-      </mat-list-item>
-      <mat-list-item role="listitem">Item 2</mat-list-item>
-      <mat-list-item role="listitem">Item 3</mat-list-item>
-    </mat-list>
+        <span class="sidebar-menu__subtitle" *ngIf="isExpanded || isShowing"
+          >Банк ВТБ(ПАО)</span
+        >
+      </div>
+    </button>
+    <mat-divider></mat-divider>
+    <button mat-menu-item>
+      <mat-icon>work</mat-icon>
+      Управление
+    </button>
+    <button mat-menu-item>
+      <mat-icon>supervisor_account</mat-icon>
+      Субагенты
+    </button>
   </mat-sidenav>
   <mat-sidenav-content>
     <main>

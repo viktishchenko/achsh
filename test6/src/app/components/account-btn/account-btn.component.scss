@@ -39,10 +39,10 @@
 }
 
 .account-logo__arrow {
-  margin-left: 5px;
-  color: $textWhite;
+  width: 18px;
+  height: 18px;
   margin-left: 6px;
-  transform: scale(0.9);
+  color: $textWhite;
 }
 
 .account-logo-container {
@@ -50,12 +50,6 @@
   height: 35px;
   background-color: #c4c4c4;
   border-radius: 50%;
-}
-.account-logo-arrow {
-  width: 18px;
-  height: 19px;
-  font-size: 20px;
-  transform: scale(0.9);
 }
 
 @media (max-width: 1024px) {

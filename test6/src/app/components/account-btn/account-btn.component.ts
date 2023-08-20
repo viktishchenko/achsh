@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
         <div class="account-logo-container">
           <img
             class="account-logo__image"
-            src="assets/images/svg/ic_person_48px 2.svg"
+            src="assets/icons/svg/ic_person.svg"
             alt="logo"
           />
           <mat-menu #menu="matMenu">
@@ -23,11 +23,9 @@ import { Component } from '@angular/core';
           <span class="account-role">Администратор</span>
         </div>
         <mat-icon
-          role="img"
           class="account-logo__arrow"
-          data-mat-icon-type="font"
-          >arrow_drop_down</mat-icon
-        >
+          [svgIcon]="'input-arrow-down'"
+        ></mat-icon>
       </div>
     </button>
   `,
