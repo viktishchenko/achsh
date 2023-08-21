@@ -8,9 +8,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material-custom-theme';
 import { AccountBtnComponent } from './components/account-btn/account-btn.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { SidenavContentComponent } from './components/sidenav-content/sidenav-content.component';
 
 @NgModule({
-  declarations: [AppComponent, AccountBtnComponent, ToolbarComponent],
+  declarations: [AppComponent, AccountBtnComponent, ToolbarComponent, SidenavComponent, SidenavContentComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

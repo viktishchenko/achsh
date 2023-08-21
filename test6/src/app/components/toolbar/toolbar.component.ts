@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-toolbar',
@@ -14,10 +13,10 @@ import { MatSidenav } from '@angular/material/sidenav';
         </div>
       </div>
     </mat-toolbar>
+    <app-sidenav #sidenav [isSidenavOpen]="isSidenavOpen"></app-sidenav>
   `,
   styleUrls: ['./toolbar.component.scss'],
 })
 export class ToolbarComponent {
-  @Input()
-  sidenav!: MatSidenav;
+  @Input() isSidenavOpen!: boolean;
 }

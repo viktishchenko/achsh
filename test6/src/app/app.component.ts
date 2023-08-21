@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
-import { MatDrawerMode } from '@angular/material/sidenav';
 import { SharedIconService } from './servises/shared-icon.service';
 
 @Component({
@@ -10,11 +9,6 @@ import { SharedIconService } from './servises/shared-icon.service';
 })
 export class AppComponent {
   title = 'rm-test';
-
-  isExpanded = true;
-  showSubmenu: boolean = false;
-  isShowing = false;
-  showSubSubMenu: boolean = false;
 
   isSidenavOpen = true;
 

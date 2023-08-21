@@ -85,3 +85,8 @@ constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
 </details>
 
 - add custom icon service
+- add sidenav
+
+```js
+ng g c components/sidenav --skip-tests --dry-run
+```

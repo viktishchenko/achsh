@@ -1,0 +1,34 @@
+<mat-sidenav-container class="container">
+  <mat-sidenav [opened]="isSidenavOpen" mode="side">
+    <mat-divider></mat-divider>
+    <button mat-menu-item>
+      <mat-icon>manage_accounts</mat-icon>
+      Иванов И.И
+    </button>
+    <mat-divider></mat-divider>
+    <button mat-menu-item>
+      <mat-icon [svgIcon]="'icons8-management'"></mat-icon>
+      Администрирование
+    </button>
+    <mat-divider></mat-divider>
+    <button mat-menu-item>
+      <div class="parent-menu-wrapper">
+        <div class="sidebar-menu">
+          <span class="sidebar-menu__title">Суперагент</span>
+          <mat-icon class="menu-button">arrow_drop_down</mat-icon>
+        </div>
+        <span class="sidebar-menu__subtitle">Банк ВТБ(ПАО)</span>
+      </div>
+    </button>
+    <mat-divider></mat-divider>
+    <button mat-menu-item>
+      <mat-icon>work</mat-icon>
+      Управление
+    </button>
+    <button mat-menu-item>
+      <mat-icon>supervisor_account</mat-icon>
+      Субагенты
+    </button>
+  </mat-sidenav>
+  <app-sidenav-content></app-sidenav-content>
+</mat-sidenav-container>
