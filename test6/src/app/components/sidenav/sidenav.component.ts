@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-sidenav',
@@ -8,7 +7,6 @@ import { MatSidenav } from '@angular/material/sidenav';
 })
 export class SidenavComponent {
   @Input() isSidenavOpen!: boolean;
-
   toggle() {
     this.isSidenavOpen = !this.isSidenavOpen;
   }

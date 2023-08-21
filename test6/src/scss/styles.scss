@@ -42,52 +42,10 @@ body {
   margin: auto;
 }
 
-.mat-drawer-content {
-  top: 70px;
-}
-
-.mat-drawer-container {
-  overflow: unset;
-}
-
-.mat-sidenav-container {
-  display: flex;
-  flex: 1 1 auto;
-}
-
-.mat-sidenav-content {
-  padding: 25px 40px 0;
-  background-color: $mainBg;
-}
-
 .mat-drawer.mat-drawer-side {
-  position: fixed;
   background-color: map-get($rm-test-accent, 500);
-  width: 273px;
-  top: 70px !important;
 }
 
-@media (max-width: 1440px) {
-  .mat-drawer.mat-drawer-side {
-    width: 263px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .mat-sidenav {
-    top: 70px;
-  }
-  .mat-drawer.mat-drawer-side {
-    z-index: 2;
-    top: 55px !important;
-  }
-  .mat-drawer-side {
-    width: 263px;
-  }
-  .mat-drawer-content {
-    top: 55px !important;
-  }
-}
-
-@media (max-width: 767px) {
+.mat-drawer-content {
+  overflow: unset !important;
 }

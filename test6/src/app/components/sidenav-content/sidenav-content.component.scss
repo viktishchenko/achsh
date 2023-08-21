@@ -1,1 +1,26 @@
 @import "../../../scss/variables.scss";
+
+.mat-drawer-content {
+  top: 70px;
+}
+
+.mat-sidenav-content {
+  margin: 0 !important;
+}
+
+.mat-sidenav-content {
+  padding: 25px 40px 0;
+  background-color: $mainBg;
+}
+
+.mat-drawer.mat-drawer-side {
+  position: fixed;
+  width: 273px;
+  top: 70px !important;
+}
+
+@media (max-width: 1024px) {
+  .mat-drawer-content {
+    top: 55px !important;
+  }
+}

@@ -1,0 +1,58 @@
+@import "../../../scss/variables.scss";
+
+.mat-drawer.mat-drawer-side {
+  position: fixed;
+  width: 273px;
+  top: 70px !important;
+}
+
+.sidebar-menu {
+  display: flex;
+  align-items: center;
+  color: $textWhite;
+}
+
+.sidebar-menu__title {
+  @include font(2rem, 2.6rem, 700);
+  color: $textWhite;
+}
+
+.sidebar-menu__subtitle {
+  @include font(1.6rem, 2.3rem, 300);
+  color: $textWhiteLight;
+}
+
+.mat-sidenav .mat-icon {
+  color: #fff;
+  margin: 0 0 0 15px;
+  transform: scale(0.9);
+}
+
+.mat-divider {
+  border-top-color: $underscore;
+}
+
+@media (max-width: 1440px) {
+  .mat-drawer.mat-drawer-side {
+    width: 263px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .mat-sidenav {
+    top: 70px;
+  }
+  .mat-drawer.mat-drawer-side {
+    z-index: 2;
+    top: 55px !important;
+  }
+  .mat-drawer-side {
+    width: 263px;
+  }
+  .mat-drawer-content {
+    top: 55px !important;
+  }
+}
+
+@media (max-width: 767px) {
+}
