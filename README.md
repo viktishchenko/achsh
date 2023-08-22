@@ -85,8 +85,14 @@ constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
 </details>
 
 - add custom icon service
-- add sidenav
+- add sidenav & mobile menu
+
+<details>
 
 ```js
 ng g c components/sidenav --skip-tests --dry-run
 ```
+
+![Alt text](test6/src/readmeAssets/mobile-menu.png)
+
+</details>

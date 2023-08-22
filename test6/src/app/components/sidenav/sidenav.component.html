@@ -1,31 +1,31 @@
 <mat-sidenav-container class="container">
   <mat-sidenav [opened]="isSidenavOpen" mode="side">
-    <mat-divider></mat-divider>
-    <button mat-menu-item>
+    <mat-divider class="md-line"></mat-divider>
+    <button class="md-view sidebar-menu__title" mat-menu-item>
       <mat-icon>manage_accounts</mat-icon>
       Иванов И.И
     </button>
-    <mat-divider></mat-divider>
-    <button mat-menu-item>
+    <mat-divider class="md-view"></mat-divider>
+    <button class="md-view sidebar-menu__title" mat-menu-item>
       <mat-icon [svgIcon]="'icons8-management'"></mat-icon>
       Администрирование
     </button>
-    <mat-divider></mat-divider>
-    <button mat-menu-item>
+    <mat-divider class="md-view"></mat-divider>
+    <button mat-menu-item class="revert">
       <div class="parent-menu-wrapper">
         <div class="sidebar-menu">
-          <span class="sidebar-menu__title">Суперагент</span>
-          <mat-icon class="menu-button">arrow_drop_down</mat-icon>
+          <span class="sidebar-menu__extitle">Суперагент</span>
+          <span class="sidebar-menu__subtitle">Банк ВТБ(ПАО)</span>
         </div>
-        <span class="sidebar-menu__subtitle">Банк ВТБ(ПАО)</span>
       </div>
+      <mat-icon class="menu-button">arrow_drop_down</mat-icon>
     </button>
     <mat-divider></mat-divider>
-    <button mat-menu-item>
+    <button class="sidebar-menu__title" mat-menu-item>
       <mat-icon>work</mat-icon>
       Управление
     </button>
-    <button mat-menu-item>
+    <button class="sidebar-menu__title" mat-menu-item>
       <mat-icon>supervisor_account</mat-icon>
       Субагенты
     </button>

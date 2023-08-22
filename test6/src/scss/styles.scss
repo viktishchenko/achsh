@@ -3,8 +3,12 @@
 
 @font-face {
   font-family: $bodyFont;
-  src: url("../assets/fonts/moscowsansregular.ttf");
+  src: url("../assets/fonts/Inter-Regular.ttf");
 }
+// @font-face {
+//   font-family: $bodyFont;
+//   src: url("../assets/fonts/moscowsansregular.ttf");
+// }
 
 * {
   padding: 0;
@@ -41,6 +45,10 @@ body {
   width: 100%;
   margin: auto;
 }
+
+// .spacer {
+//   flex: 1 1 auto;
+// }
 
 .mat-drawer.mat-drawer-side {
   background-color: map-get($rm-test-accent, 500);
