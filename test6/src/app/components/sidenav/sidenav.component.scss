@@ -73,6 +73,11 @@
   padding: 0 0 20px 40px;
 }
 
+.special-btn {
+  background: transparent !important;
+  cursor: unset !important;
+}
+
 .submenu.expanded {
   transform: scaleY(1);
 }

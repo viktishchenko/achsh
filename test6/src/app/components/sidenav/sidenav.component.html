@@ -24,7 +24,11 @@
     </button>
     <mat-divider class="extra"></mat-divider>
     <div [ngClass]="{ active: showSubmenu }" class="expanded-menu">
-      <button class="sidebar-menu__title" mat-menu-item>
+      <button
+        [disableRipple]="true"
+        class="special-btn sidebar-menu__title"
+        mat-menu-item
+      >
         <mat-icon>work</mat-icon>
         Управление
       </button>
