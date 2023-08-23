@@ -30,4 +30,10 @@ export class SidenavComponent {
   toggle() {
     this.isSidenavOpen = !this.isSidenavOpen;
   }
+
+  fixMenu() {
+    if (this.showSubmenu) {
+      this.showSubmenu = !this.showSubmenu;
+    }
+  }
 }
