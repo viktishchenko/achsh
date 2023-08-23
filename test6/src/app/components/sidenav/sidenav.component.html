@@ -56,10 +56,16 @@
         >
       </div>
     </div>
-    <button class="sidebar-menu__title" mat-menu-item>
+    <a
+      class="submenu-link"
+      mat-menu-item
+      [routerLink]="['sub-agents']"
+      routerLinkActive="active"
+      class="sidebar-menu__title"
+    >
       <mat-icon>supervisor_account</mat-icon>
       Субагенты
-    </button>
+    </a>
   </mat-sidenav>
   <app-sidenav-content></app-sidenav-content>
 </mat-sidenav-container>

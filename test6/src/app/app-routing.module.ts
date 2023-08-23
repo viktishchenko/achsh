@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: 'agent-cards', component: AgentCardsComponent },
   { path: 'agent-contacts', component: AgentContactsComponent },
   { path: '', redirectTo: 'agent-cards', pathMatch: 'full' },
+  { path: 'sub-agents', loadChildren: () => import('./pages/sub-agents/sub-agents.module').then(m => m.SubAgentsModule) },
   { path: '**', redirectTo: 'agent-cards' },
 ];
 

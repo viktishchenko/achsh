@@ -100,3 +100,13 @@ ng g c components/sidenav --skip-tests --dry-run
 ![Alt text](test6/src/readmeAssets/desctop-menu.png)
 
 </details>
+
+- add lazy component
+
+<details>
+
+```js
+ng g m pages/sub-agents --route sub-agents --module app.module --dry-run
+```
+
+</details>

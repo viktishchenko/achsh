@@ -31,7 +31,7 @@
 .sidebar-menu__title {
   font-family: $bodyFont;
   @include font(1.8rem, 2.4rem, 700);
-  color: $textWhite;
+  color: $textWhite !important;
 }
 
 .sidebar-menu__subtitle {
@@ -119,6 +119,10 @@
     display: none;
   }
 
+  .expanded-menu.active {
+    background-color: inherit;
+  }
+
   .mat-drawer.mat-drawer-side {
     width: 320px;
     top: 55px !important;
@@ -155,6 +159,10 @@
 
   .revert {
     justify-content: space-between;
+  }
+
+  .submenu-link {
+    padding: 0 !important;
   }
 }
 
