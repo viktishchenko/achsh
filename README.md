@@ -95,4 +95,8 @@ ng g c components/sidenav --skip-tests --dry-run
 
 ![Alt text](test6/src/readmeAssets/mobile-menu.png)
 
+// add desctop menu
+
+![Alt text](test6/src/readmeAssets/desctop-menu.png)
+
 </details>

@@ -16,6 +16,8 @@
 
 .sidebar-menu {
   display: flex;
+  flex-direction: column;
+  margin: 25px 15px 24px 0px;
   align-items: center;
   color: $textWhite;
 }
@@ -46,16 +48,50 @@
   border-top-color: $underscore;
 }
 
+.extra {
+  margin-bottom: 4px;
+}
+
+.expanded-menu.active {
+  background-color: $activeMemuBg;
+}
+
 .menu-button {
   width: 18px;
   height: 18px;
   font-size: large;
   margin: 0 !important;
+  transition: 300ms ease-in-out;
+}
+
+.menu-button.rotated {
+  transition: 300ms ease-in-out;
+  transform: rotate(180deg);
+}
+
+.submenu {
+  padding: 0 0 20px 40px;
+}
+
+.submenu.expanded {
+  transform: scaleY(1);
+}
+
+.submenu-link {
+  color: $textWhiteLight !important;
+  background: transparent !important;
+}
+
+.submenu-link.active {
+  color: $textWhite !important;
+  color: white;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .revert {
   flex-direction: row-reverse;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 @media (max-width: 1440px) {
@@ -92,6 +128,11 @@
     display: flex;
   }
 
+  .sidebar-menu {
+    flex-direction: unset;
+    margin: 0;
+  }
+
   .parent-menu-wrapper {
     display: flex;
     justify-content: space-between;
@@ -105,6 +146,10 @@
   .sidebar-menu.mat-icon {
     width: 18px;
     height: 18px;
+  }
+
+  .revert {
+    justify-content: space-between;
   }
 }
 

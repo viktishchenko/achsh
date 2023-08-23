@@ -11,20 +11,47 @@
       Администрирование
     </button>
     <mat-divider class="md-view"></mat-divider>
-    <button mat-menu-item class="revert">
+    <button (click)="showSubmenu = !showSubmenu" mat-menu-item class="revert">
       <div class="parent-menu-wrapper">
         <div class="sidebar-menu">
           <span class="sidebar-menu__extitle">Суперагент</span>
           <span class="sidebar-menu__subtitle">Банк ВТБ(ПАО)</span>
         </div>
       </div>
-      <mat-icon class="menu-button">arrow_drop_down</mat-icon>
+      <mat-icon [ngClass]="{ rotated: showSubmenu }" class="menu-button"
+        >arrow_drop_down</mat-icon
+      >
     </button>
-    <mat-divider></mat-divider>
-    <button class="sidebar-menu__title" mat-menu-item>
-      <mat-icon>work</mat-icon>
-      Управление
-    </button>
+    <mat-divider class="extra"></mat-divider>
+    <div [ngClass]="{ active: showSubmenu }" class="expanded-menu">
+      <button class="sidebar-menu__title" mat-menu-item>
+        <mat-icon>work</mat-icon>
+        Управление
+      </button>
+      <div
+        *ngIf="showSubmenu"
+        @onOff
+        class="submenu"
+        [ngClass]="{ expanded: showSubmenu }"
+      >
+        <a
+          class="submenu-link active"
+          mat-menu-item
+          [routerLink]="['agent-cart']"
+          routerLinkActive="active"
+          [disableRipple]="true"
+          >Карточка контрагента</a
+        >
+        <a
+          class="submenu-link"
+          mat-menu-item
+          [routerLink]="['agent-treaty']"
+          routerLinkActive="active"
+          [disableRipple]="true"
+          >Договоры контрагента</a
+        >
+      </div>
+    </div>
     <button class="sidebar-menu__title" mat-menu-item>
       <mat-icon>supervisor_account</mat-icon>
       Субагенты

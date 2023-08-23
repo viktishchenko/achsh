@@ -10,6 +10,7 @@ $maxWidth: 1600px;
 $mainBg: #f5f6f7;
 $underscore: #c4c4c4;
 $maxWidth: 1600px;
+$activeMemuBg: #a2a9b1;
 
 @mixin font($size, $height: $size, $weight: bold, $style: normal) {
   font-size: $size;
