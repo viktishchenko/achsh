@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
-import { SharedIconService } from './servises/shared-icon.service';
+import { SharedIconService } from './services/shared-icon.service';
 
 @Component({
   selector: 'app-root',

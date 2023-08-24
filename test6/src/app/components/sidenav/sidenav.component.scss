@@ -17,7 +17,7 @@
 .sidebar-menu {
   display: flex;
   flex-direction: column;
-  margin: 25px 15px 24px 0px;
+  margin: 25px 15px 24px 15px;
   align-items: center;
   color: $textWhite;
 }
@@ -42,6 +42,7 @@
 
 .mat-sidenav .mat-icon {
   color: #fff;
+  margin-left: 13px;
 }
 
 .mat-divider {
@@ -109,6 +110,10 @@
   .mat-sidenav {
     top: 70px;
     padding: 0 16px;
+  }
+
+  .mat-sidenav .mat-icon {
+    margin-left: 0;
   }
 
   .mat-mdc-menu-item {
