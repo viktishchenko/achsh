@@ -109,4 +109,6 @@ ng g c components/sidenav --skip-tests --dry-run
 ng g m pages/sub-agents --route sub-agents --module app.module --dry-run
 ```
 
+![Alt text](test6/src/readmeAssets/lazy-comp-includes.png)
+
 </details>
