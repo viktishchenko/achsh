@@ -1,3 +1,5 @@
+import { SharedModule } from 'src/app/services/shared.module';
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -6,6 +8,6 @@ import { SubAgentsComponent } from './sub-agents.component';
 
 @NgModule({
   declarations: [SubAgentsComponent],
-  imports: [CommonModule, SubAgentsRoutingModule],
+  imports: [CommonModule, SubAgentsRoutingModule, SharedModule],
 })
 export class SubAgentsModule {}

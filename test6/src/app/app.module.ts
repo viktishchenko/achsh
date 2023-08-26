@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,7 +11,7 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { SidenavContentComponent } from './components/sidenav-content/sidenav-content.component';
 import { AgentCardsComponent } from './pages/agent-cards/agent-cards.component';
 import { AgentContactsComponent } from './pages/agent-contacts/agent-contacts.component';
-import { BackBtnComponent } from './components/back-btn/back-btn.component';
+import { SharedModule } from './services/shared.module';
 
 @NgModule({
   declarations: [
@@ -23,14 +22,13 @@ import { BackBtnComponent } from './components/back-btn/back-btn.component';
     SidenavContentComponent,
     AgentCardsComponent,
     AgentContactsComponent,
-    BackBtnComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
-    HttpClientModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
