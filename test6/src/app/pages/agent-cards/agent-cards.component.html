@@ -1,2 +1,29 @@
 <div class="app-back-btn"></div>
-<h1>agent-cards works!</h1>
+<div class="page-header">
+  <h1>{{ title }}</h1>
+</div>
+<div class="btn-block">
+  <div class="btn-block__wrapper">
+    <button color="primary" mat-flat-button (click)="addUser()">
+      Добавить
+      <mat-icon iconPositionEnd>add_circle_outline</mat-icon>
+    </button>
+    <button color="primary" mat-flat-button (click)="unBlockUser()">
+      Разблокировать
+      <mat-icon iconPositionEnd>check_circle_outline</mat-icon>
+    </button>
+    <button color="primary" mat-flat-button (click)="blockUser()">
+      Заблокировать
+      <mat-icon iconPositionEnd>highlight_off</mat-icon>
+    </button>
+  </div>
+  <button
+    class="filter"
+    color="accent"
+    mat-flat-button
+    (click)="filteredUser()"
+  >
+    Фильтр
+    <mat-icon>filter_list</mat-icon>
+  </button>
+</div>

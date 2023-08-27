@@ -14,6 +14,10 @@
   display: none;
 }
 
+.mat-drawer.mat-drawer-side {
+  background-color: $backgroundColorDark;
+}
+
 .sidebar-menu {
   display: flex;
   flex-direction: column;
@@ -41,7 +45,7 @@
 }
 
 .mat-sidenav .mat-icon {
-  color: #fff;
+  color: $textWhite;
   margin-left: 13px;
 }
 
