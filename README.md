@@ -111,4 +111,8 @@ ng g m pages/sub-agents --route sub-agents --module app.module --dry-run
 
 ![Alt text](test6/src/readmeAssets/lazy-comp-includes.png)
 
+- add filter-form component
+
+![Alt text](test6/src/readmeAssets/filter-form.png)
+
 </details>

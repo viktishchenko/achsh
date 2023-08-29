@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AgentCardsComponent {
   title = 'Настройка учетных записей сотрудников контрагента';
+  showFilter = true;
 
   addUser() {
     console.log('ADD USER!');
@@ -18,9 +19,5 @@ export class AgentCardsComponent {
 
   blockUser() {
     console.log('BLOCK USER!');
-  }
-
-  filteredUser() {
-    console.log('filtered USER!');
   }
 }

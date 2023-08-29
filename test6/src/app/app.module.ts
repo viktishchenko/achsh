@@ -12,6 +12,7 @@ import { SidenavContentComponent } from './components/sidenav-content/sidenav-co
 import { AgentCardsComponent } from './pages/agent-cards/agent-cards.component';
 import { AgentContactsComponent } from './pages/agent-contacts/agent-contacts.component';
 import { SharedModule } from './services/shared.module';
+import { FilterFormComponent } from './components/filter-form/filter-form.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { SharedModule } from './services/shared.module';
     SidenavContentComponent,
     AgentCardsComponent,
     AgentContactsComponent,
+    FilterFormComponent,
   ],
   imports: [
     BrowserModule,

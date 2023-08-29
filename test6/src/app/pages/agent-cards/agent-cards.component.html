@@ -21,9 +21,10 @@
     class="filter"
     color="accent"
     mat-flat-button
-    (click)="filteredUser()"
+    (click)="showFilter = !showFilter"
   >
     Фильтр
     <mat-icon>filter_list</mat-icon>
   </button>
 </div>
+<div *ngIf="showFilter" class="app-filter-form"></div>
