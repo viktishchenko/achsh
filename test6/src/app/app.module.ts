@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './services/angular-material-custom-theme';
+import { FormsModule } from '@angular/forms';
 import { AccountBtnComponent } from './components/account-btn/account-btn.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
@@ -31,6 +32,7 @@ import { FilterFormComponent } from './components/filter-form/filter-form.compon
     BrowserAnimationsModule,
     AngularMaterialModule,
     SharedModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

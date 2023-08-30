@@ -7,6 +7,7 @@ export enum Icons {
   Management = 'icons8-management',
   Arrow = 'input-arrow-down',
   ArrowLeft = 'arrow-left',
+  Calendar = 'calendar',
 }
 
 @Injectable({

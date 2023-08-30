@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./filter-form.component.scss'],
 })
 export class FilterFormComponent {
+  value = ' ';
   filteredForm() {
     console.log('this form was submitted!');
   }

@@ -2,5 +2,30 @@
   <h2>Фильтр</h2>
 </div>
 <div class="filter-form">
-  <form novalidate (ngSubmit)="filteredForm()" #filterForm>asd</form>
+  <form novalidate (ngSubmit)="filteredForm()" #filterForm>
+    <mat-divider></mat-divider>
+    <div style="font-size: 12px">
+      <mat-label>Choose a date</mat-label>
+      <mat-form-field appearance="outline" class="test">
+        <input matInput [matDatepicker]="picker" />
+        <mat-datepicker-toggle matIconSuffix [for]="picker">
+          <mat-icon matDatepickerToggleIcon [svgIcon]="'calendar'"></mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-label>Clearable input</mat-label>
+      <mat-form-field appearance="outline" class="example-form-field">
+        <input name="val" matInput type="text" [(ngModel)]="value" />
+        <button
+          *ngIf="value"
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="value = ''"
+        >
+          <mat-icon class="btn-grey">cancel</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+  </form>
 </div>
