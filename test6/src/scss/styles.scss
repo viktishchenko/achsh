@@ -1,3 +1,5 @@
+@use "@angular/material" as mat;
+
 @import "../scss/theme.scss";
 @import "../scss/variables.scss";
 
@@ -9,6 +11,10 @@
 //   font-family: $bodyFont;
 //   src: url("../assets/fonts/moscowsansregular.ttf");
 // }
+
+.density-3-section {
+  @include mat.all-component-densities(-3);
+}
 
 * {
   padding: 0;

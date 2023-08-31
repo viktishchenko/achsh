@@ -3,29 +3,109 @@
 </div>
 <div class="filter-form">
   <form novalidate (ngSubmit)="filteredForm()" #filterForm>
-    <mat-divider></mat-divider>
-    <div style="font-size: 12px">
-      <mat-label>Choose a date</mat-label>
-      <mat-form-field appearance="outline" class="test">
-        <input matInput [matDatepicker]="picker" />
-        <mat-datepicker-toggle matIconSuffix [for]="picker">
-          <mat-icon matDatepickerToggleIcon [svgIcon]="'calendar'"></mat-icon>
-        </mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
-      <mat-label>Clearable input</mat-label>
-      <mat-form-field appearance="outline" class="example-form-field">
-        <input name="val" matInput type="text" [(ngModel)]="value" />
-        <button
-          *ngIf="value"
-          matSuffix
-          mat-icon-button
-          aria-label="Clear"
-          (click)="value = ''"
-        >
-          <mat-icon class="btn-grey">cancel</mat-icon>
-        </button>
-      </mat-form-field>
+    <div class="density-3-section">
+      <div class="form-group">
+        <mat-label>Логин</mat-label>
+        <mat-form-field appearance="outline">
+          <input name="login" matInput type="text" [(ngModel)]="value" />
+          <button
+            *ngIf="value"
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            (click)="value = ''"
+          >
+            <mat-icon class="btn-grey">cancel</mat-icon>
+          </button>
+          <mat-error></mat-error>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-label>Телефон</mat-label>
+        <mat-form-field appearance="outline">
+          <input name="phone" matInput type="tel" [(ngModel)]="phoneValue" />
+          <button
+            *ngIf="phoneValue"
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            (click)="phoneValue = ''"
+          >
+            <mat-icon class="btn-grey">cancel</mat-icon>
+          </button>
+          <mat-error></mat-error>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-label>Статус</mat-label>
+        <mat-form-field appearance="outline">
+          <mat-select name="testo" [(ngModel)]="selectedOption">
+            <mat-option value="one">Активен</mat-option>
+            <mat-option value="two">Заблокирован</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-label>Дата создания</mat-label>
+        <mat-form-field appearance="outline">
+          <input matInput [matDatepicker]="picker" />
+          <mat-datepicker-toggle matIconSuffix [for]="picker">
+            <mat-icon matDatepickerToggleIcon [svgIcon]="'calendar'"></mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-label>Email</mat-label>
+        <mat-form-field appearance="outline">
+          <input matInput required />
+          <button
+            *ngIf="emailValue"
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            (click)="emailValue = ''"
+          >
+            <mat-icon class="btn-grey">cancel</mat-icon>
+          </button>
+          <mat-error></mat-error>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-label>Статус</mat-label>
+        <mat-form-field appearance="outline">
+          <mat-select name="testo2" [(ngModel)]="selectedOptionStatus">
+            <mat-option value="one">Пользователь</mat-option>
+            <mat-option value="two">Администратор</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-label>Дата изменения</mat-label>
+        <mat-form-field appearance="outline">
+          <input matInput [matDatepicker]="picker2" />
+          <mat-datepicker-toggle matIconSuffix [for]="picker2">
+            <mat-icon matDatepickerToggleIcon [svgIcon]="'calendar'"></mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+      </div>
     </div>
   </form>
+  <div class="btn-block">
+    <div class="btn-block__wrapper">
+      <button color="primary" mat-flat-button (click)="applyChanges()">
+        Добавить
+        <mat-icon iconPositionEnd>add_circle_outline</mat-icon>
+      </button>
+      <button color="primary" mat-flat-button (click)="cancelChanges()">
+        Разблокировать
+        <mat-icon iconPositionEnd>check_circle_outline</mat-icon>
+      </button>
+      <button color="primary" mat-flat-button (click)="resetChanges()">
+        Заблокировать
+        <mat-icon iconPositionEnd>highlight_off</mat-icon>
+      </button>
+    </div>
+  </div>
 </div>

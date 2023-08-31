@@ -7,7 +7,24 @@ import { Component } from '@angular/core';
 })
 export class FilterFormComponent {
   value = ' ';
+  phoneValue = ' ';
+  selectedOption = 'one';
+  emailValue = ' ';
+  selectedOptionStatus = 'one';
+
   filteredForm() {
-    console.log('this form was submitted!');
+    console.log('SUBMIT!');
+  }
+
+  applyChanges() {
+    console.log('APPLY!');
+  }
+
+  cancelChanges() {
+    console.log('CANCEL!');
+  }
+
+  resetChanges() {
+    console.log('RESET!');
   }
 }
