@@ -34,25 +34,25 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .btn-block {
     flex-direction: column;
     .filter {
       width: 113px;
     }
   }
+}
 
-  @media (max-width: 600px) {
-    .btn-block {
-      button {
-        width: 136px;
-      }
-      mat-icon {
-        display: none;
-      }
-      .filter {
-        width: 136px;
-      }
+@media (max-width: 600px) {
+  .btn-block {
+    button {
+      width: 136px;
+    }
+    mat-icon {
+      display: none;
+    }
+    .filter {
+      width: 136px;
     }
   }
 }

@@ -15,7 +15,7 @@
             aria-label="Clear"
             (click)="value = ''"
           >
-            <mat-icon class="btn-grey">cancel</mat-icon>
+            <mat-icon class="btn-gray">cancel</mat-icon>
           </button>
           <mat-error></mat-error>
         </mat-form-field>
@@ -31,7 +31,7 @@
             aria-label="Clear"
             (click)="phoneValue = ''"
           >
-            <mat-icon class="btn-grey">cancel</mat-icon>
+            <mat-icon class="btn-gray">cancel</mat-icon>
           </button>
           <mat-error></mat-error>
         </mat-form-field>
@@ -66,7 +66,7 @@
             aria-label="Clear"
             (click)="emailValue = ''"
           >
-            <mat-icon class="btn-grey">cancel</mat-icon>
+            <mat-icon class="btn-gray">cancel</mat-icon>
           </button>
           <mat-error></mat-error>
         </mat-form-field>
@@ -95,16 +95,13 @@
   <div class="btn-block">
     <div class="btn-block__wrapper">
       <button color="primary" mat-flat-button (click)="applyChanges()">
-        Добавить
-        <mat-icon iconPositionEnd>add_circle_outline</mat-icon>
+        Применить
       </button>
-      <button color="primary" mat-flat-button (click)="cancelChanges()">
-        Разблокировать
-        <mat-icon iconPositionEnd>check_circle_outline</mat-icon>
+      <button color="accent" mat-flat-button (click)="cancelChanges()">
+        Отмена
       </button>
-      <button color="primary" mat-flat-button (click)="resetChanges()">
-        Заблокировать
-        <mat-icon iconPositionEnd>highlight_off</mat-icon>
+      <button color="accent" mat-flat-button (click)="resetChanges()">
+        Сбросить
       </button>
     </div>
   </div>

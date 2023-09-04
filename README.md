@@ -115,4 +115,8 @@ ng g m pages/sub-agents --route sub-agents --module app.module --dry-run
 
 ![Alt text](test6/src/readmeAssets/filter-form.png)
 
+- add media-query
+
+![Alt text](test6/src/readmeAssets/filter-component.png)
+
 </details>

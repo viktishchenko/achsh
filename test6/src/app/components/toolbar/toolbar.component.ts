@@ -6,9 +6,15 @@ import { Component, Input } from '@angular/core';
     <mat-toolbar color="primary" class="header">
       <div class="container">
         <div class="account">
-          <span class="nav-tool-item">
-            <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
-          </span>
+          <button
+            (click)="sidenav.toggle()"
+            class="nav-tool-item"
+            mat-icon-button
+            color="accent"
+            aria-label="menu toggle button"
+          >
+            <mat-icon>menu</mat-icon>
+          </button>
           <app-account-btn></app-account-btn>
         </div>
       </div>

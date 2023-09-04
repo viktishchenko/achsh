@@ -8,6 +8,8 @@
 
 .nav-tool-item {
   display: none;
+  color: white;
+  transform: scale(1.2);
 }
 
 .account {
@@ -25,6 +27,6 @@
     align-items: center;
   }
   .account {
-    margin-right: 54px;
+    margin-right: 33px;
   }
 }

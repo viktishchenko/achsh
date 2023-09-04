@@ -2,43 +2,189 @@
 
 :host {
   padding: 24px 32px;
-  background-color: $bgWhite;
   border-radius: 8px;
+  color: $textDark;
+  background-color: $bgWhite;
+  font-family: $bodyFont;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.05);
 }
 
-.btn-grey {
-  color: $formBtnGrey;
+.btn-gray {
+  color: $iconBtnGray;
 }
 
-// --- form ---
+::ng-deep .mat-mdc-form-field-has-icon-suffix .mat-mdc-text-field-wrapper {
+  width: 266px !important;
+}
 
-// ::ng-deep .mat-mdc-form-field-has-icon-suffix .mat-mdc-text-field-wrapper {
-//   width: 266px !important;
-//   height: 44px;
-// }
+::ng-deep .mat-mdc-text-field-wrapper {
+  height: 44px !important;
+}
 
-// ::ng-deep .mdc-text-field--outlined .mdc-notched-outline {
-//   border-radius: 8px;
-//   border: 1px solid $formBorderGrey !important;
-//   border-image-width: 0;
-//   border-bottom-width: 0;
-//   border-right-width: 0;
-//   border-top-width: 0;
-//   border-left-width: 0;
-// }
+::ng-deep .mat-mdc-form-field-flex {
+  height: 100% !important;
+}
 
-// ::ng-deep
-//   .mat-mdc-text-field-wrapper.mdc-text-field--outlined
-//   .mat-mdc-form-field-infix {
-//   height: 100% !important;
-//   padding-top: 8px !important;
-//   padding-bottom: 8px !important;
-// }
+::ng-deep
+  .density-3-section
+  .mat-mdc-text-field-wrapper.mdc-text-field--outlined
+  .mat-mdc-form-field-infix {
+  padding: 9px 0;
+  min-height: 100%;
+}
 
-// --- btn-block ---
+.filter-form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
 
-// .btn-block {
-// }
-// .btn-block__wrapper {
-// }
+.filter-form {
+  mat-form-field {
+    margin-right: 24px;
+  }
+}
+
+.filter-title {
+  margin-bottom: 3.2rem;
+  h2 {
+    @include font(2rem, 2.4rem, 700);
+  }
+}
+
+.form-group {
+  display: inline-block;
+  color: $textDark;
+  font-family: $bodyFont;
+  mat-form-field {
+    width: 266px;
+  }
+  mat-label {
+    display: block;
+    margin-bottom: 10px;
+    @include font(1.6rem, 2rem, 700);
+  }
+  mat-input {
+    @include font(1.6rem, 1.8rem, 300);
+  }
+}
+
+.mat-mdc-form-field-has-icon-suffix .mat-mdc-text-field-wrapper {
+  height: 44px !important;
+}
+
+.mat-mdc-text-field-wrapper {
+  height: 44px;
+}
+
+.btn-block {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 9px;
+  button {
+    width: 169px;
+    height: 48px;
+    margin: 7px 0;
+    font-family: $bodyFont;
+    @include font(1.6rem, 2rem, 700);
+  }
+}
+
+.btn-block__wrapper {
+  button:not(:last-child) {
+    margin-right: 25px;
+  }
+}
+
+.btn-block__wrapper {
+  button:not(:last-child) {
+    margin-right: 25px;
+  }
+  button:first-child {
+    color: $textWhite;
+  }
+  button:not(:first-child) {
+    opacity: 0.8;
+    color: $textDarkLight;
+    background-color: $btnBgLight;
+  }
+}
+
+@media (max-width: 1440px) {
+  ::ng-deep .mat-mdc-form-field-has-icon-suffix .mat-mdc-text-field-wrapper {
+    width: 294px !important;
+  }
+  .form-group {
+    mat-form-field {
+      width: 294px;
+    }
+  }
+}
+@media (max-width: 1024px) {
+  ::ng-deep .mat-mdc-form-field-has-icon-suffix .mat-mdc-text-field-wrapper {
+    width: 264px !important;
+  }
+
+  ::ng-deep .mat-mdc-text-field-wrapper {
+    height: 36px !important;
+  }
+
+  ::ng-deep .mat-mdc-form-field-flex {
+    height: 100% !important;
+  }
+
+  ::ng-deep
+    .density-3-section
+    .mat-mdc-text-field-wrapper.mdc-text-field--outlined
+    .mat-mdc-form-field-infix {
+    padding: 4px 0;
+  }
+
+  .form-group {
+    mat-form-field {
+      width: 264px;
+    }
+  }
+
+  .mat-mdc-form-field-has-icon-suffix .mat-mdc-text-field-wrapper {
+    height: 36px !important;
+  }
+
+  .mat-mdc-text-field-wrapper {
+    height: 36px;
+  }
+}
+@media (max-width: 768px) {
+  ::ng-deep .mat-mdc-form-field-has-icon-suffix .mat-mdc-text-field-wrapper {
+    width: 292px !important;
+  }
+
+  .form-group {
+    mat-form-field {
+      width: 292px;
+    }
+  }
+
+  .btn-block {
+    button {
+      width: 153px;
+    }
+  }
+}
+@media (max-width: 600px) {
+  ::ng-deep .mat-mdc-form-field-has-icon-suffix .mat-mdc-text-field-wrapper {
+    width: 288px !important;
+  }
+
+  .form-group {
+    mat-form-field {
+      width: 288px;
+    }
+  }
+
+  .btn-block {
+    button {
+      width: 136px;
+    }
+  }
+}
