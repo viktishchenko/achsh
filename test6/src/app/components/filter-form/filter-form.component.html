@@ -37,15 +37,6 @@
         </mat-form-field>
       </div>
       <div class="form-group">
-        <mat-label>Статус</mat-label>
-        <mat-form-field appearance="outline">
-          <mat-select name="testo" [(ngModel)]="selectedOption">
-            <mat-option value="one">Активен</mat-option>
-            <mat-option value="two">Заблокирован</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <div class="form-group">
         <mat-label>Дата создания</mat-label>
         <mat-form-field appearance="outline">
           <input matInput [matDatepicker]="picker" />
@@ -53,6 +44,15 @@
             <mat-icon matDatepickerToggleIcon [svgIcon]="'calendar'"></mat-icon>
           </mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-label>Статус</mat-label>
+        <mat-form-field appearance="outline">
+          <mat-select name="testo" [(ngModel)]="selectedOption">
+            <mat-option value="one">Активен</mat-option>
+            <mat-option value="two">Заблокирован</mat-option>
+          </mat-select>
         </mat-form-field>
       </div>
       <div class="form-group">
@@ -72,7 +72,7 @@
         </mat-form-field>
       </div>
       <div class="form-group">
-        <mat-label>Статус</mat-label>
+        <mat-label>Роль</mat-label>
         <mat-form-field appearance="outline">
           <mat-select name="testo2" [(ngModel)]="selectedOptionStatus">
             <mat-option value="one">Пользователь</mat-option>

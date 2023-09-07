@@ -1,7 +1,7 @@
 @import "../../../scss/variables.scss";
 
 :host {
-  padding: 24px 32px;
+  padding: 32px 40px 25px 40px;
   border-radius: 8px;
   color: $textDark;
   background-color: $bgWhite;
@@ -39,10 +39,10 @@
   flex-direction: column;
 }
 
-.filter-form {
-  mat-form-field {
-    margin-right: 24px;
-  }
+.density-3-section {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 12px;
 }
 
 .filter-title {
@@ -69,6 +69,11 @@
   }
 }
 
+.form-group {
+  padding: 0 12px;
+  margin-bottom: -2px;
+}
+
 .mat-mdc-form-field-has-icon-suffix .mat-mdc-text-field-wrapper {
   height: 44px !important;
 }
@@ -80,23 +85,18 @@
 .btn-block {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 9px;
   button {
     width: 169px;
     height: 48px;
     margin: 7px 0;
+    border-radius: 8px;
     font-family: $bodyFont;
     @include font(1.6rem, 2rem, 700);
   }
 }
 
 .btn-block__wrapper {
-  button:not(:last-child) {
-    margin-right: 25px;
-  }
-}
-
-.btn-block__wrapper {
+  padding-left: 24px;
   button:not(:last-child) {
     margin-right: 25px;
   }
@@ -104,13 +104,17 @@
     color: $textWhite;
   }
   button:not(:first-child) {
-    opacity: 0.8;
-    color: $textDarkLight;
-    background-color: $btnBgLight;
+    color: rgba($textDarkLight, 0.8);
+    background-color: rgba($textDarkLight, 0.1);
   }
 }
 
 @media (max-width: 1440px) {
+  :host {
+    margin-right: 24px;
+    padding: 24px 32px 17px 32px;
+  }
+
   ::ng-deep .mat-mdc-form-field-has-icon-suffix .mat-mdc-text-field-wrapper {
     width: 294px !important;
   }
@@ -118,9 +122,19 @@
     mat-form-field {
       width: 294px;
     }
+    &:nth-child(4) {
+      order: 7;
+    }
+  }
+  .btn-block__wrapper > * {
+    margin: 0 25px 5px 0 !important;
   }
 }
 @media (max-width: 1024px) {
+  :host {
+    padding: 16px 24px;
+  }
+
   ::ng-deep .mat-mdc-form-field-has-icon-suffix .mat-mdc-text-field-wrapper {
     width: 264px !important;
   }
@@ -153,15 +167,35 @@
   .mat-mdc-text-field-wrapper {
     height: 36px;
   }
+
+  .filter-title {
+    margin-bottom: 23px;
+  }
 }
+
 @media (max-width: 768px) {
+  :host {
+    margin: 0;
+    padding: 16px 24px 10px 24px;
+  }
+
   ::ng-deep .mat-mdc-form-field-has-icon-suffix .mat-mdc-text-field-wrapper {
     width: 292px !important;
+  }
+
+  .density-3-section {
+    padding-left: 4px;
   }
 
   .form-group {
     mat-form-field {
       width: 292px;
+    }
+    &:nth-child(2) {
+      order: 4;
+    }
+    &:nth-child(6) {
+      order: 6;
     }
   }
 
@@ -169,6 +203,14 @@
     button {
       width: 153px;
     }
+  }
+
+  .btn-block__wrapper {
+    padding-left: 16px;
+  }
+
+  .filter-title {
+    margin-bottom: 16px;
   }
 }
 @media (max-width: 600px) {

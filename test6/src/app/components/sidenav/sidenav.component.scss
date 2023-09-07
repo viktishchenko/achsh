@@ -36,12 +36,18 @@
   font-family: $bodyFont;
   @include font(1.8rem, 2.4rem, 700);
   color: $textWhite !important;
+  padding-left: 26px;
 }
 
 .sidebar-menu__subtitle {
   font-family: $bodyFont;
   @include font(1.6rem, 2.3rem, 300);
   color: $textWhiteLight;
+}
+
+.submenu-link {
+  @include font(1.4rem, 1.8rem, 300);
+  padding: 0 0 15px 30px;
 }
 
 .mat-sidenav .mat-icon {
@@ -75,7 +81,8 @@
 }
 
 .submenu {
-  padding: 0 0 20px 40px;
+  padding: 0 0 5px 50px;
+  margin-bottom: 8px;
 }
 
 .special-btn {
@@ -102,11 +109,20 @@
 .revert {
   flex-direction: row-reverse;
   justify-content: center;
+  padding: 0 30px 0 30px;
 }
 
 @media (max-width: 1440px) {
   .mat-drawer.mat-drawer-side {
     width: 263px;
+  }
+
+  .submenu {
+    padding: 0 0 5px 35px;
+  }
+
+  .sidebar-menu__title {
+    padding-left: 10px;
   }
 }
 

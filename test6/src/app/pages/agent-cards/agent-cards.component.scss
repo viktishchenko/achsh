@@ -6,15 +6,17 @@
     font-family: $bodyFont;
     @include font(3rem, 3.6rem, 700);
   }
-  padding-bottom: 24px;
+  padding-bottom: 15px;
 }
 
 .btn-block {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 9px;
+  margin-bottom: 26px;
   button {
     margin: 7px 0;
+    height: 40px;
+    border-radius: 8px;
     @include font(1.4rem, 2.4rem, 300);
   }
   mat-icon {
@@ -25,6 +27,8 @@
   }
   .filter {
     color: $textDarkLight;
+    background-color: rgba($textDarkLight, 0.3);
+    box-shadow: 0px 7px 10px 0px rgba(0, 0, 0, 0.1) inset;
   }
 }
 
@@ -34,12 +38,32 @@
   }
 }
 
+@media (max-width: 1440px) {
+  .btn-block {
+    padding-right: 26px;
+  }
+}
+@media (max-width: 1024px) {
+  .page-header {
+    h1 {
+      @include font(2.2rem, 3rem, 700);
+    }
+  }
+  .btn-block {
+    margin-bottom: 17px;
+  }
+}
+
 @media (max-width: 768px) {
   .btn-block {
     flex-direction: column;
     .filter {
       width: 113px;
     }
+  }
+
+  .btn-block__wrapper {
+    margin-bottom: 10px;
   }
 }
 

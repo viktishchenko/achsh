@@ -16,7 +16,10 @@ import { Location } from '@angular/common';
       @import '../../../scss/variables.scss';
 
       :host {
-        padding-bottom: 32px;
+        padding-bottom: 28px;
+        button {
+          padding: 0;
+        }
       }
 
       .mat-icon {

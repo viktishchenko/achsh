@@ -18,6 +18,11 @@
   margin-right: 40px;
 }
 
+@media (max-width: 1440px) {
+  .account {
+    margin-right: 60px;
+  }
+}
 @media (max-width: 1024px) {
   .mat-toolbar {
     height: 55px;
@@ -25,8 +30,14 @@
   .nav-tool-item {
     display: flex;
     align-items: center;
+    transform: scale(1.4);
   }
   .account {
-    margin-right: 33px;
+    margin-right: 40px;
+  }
+}
+@media (max-width: 1024px) {
+  .account {
+    margin-right: 37px;
   }
 }
