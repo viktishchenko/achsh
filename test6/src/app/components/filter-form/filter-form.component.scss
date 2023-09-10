@@ -214,6 +214,10 @@
   }
 }
 @media (max-width: 600px) {
+  :host {
+    padding: 10px 16px 9px;
+  }
+
   ::ng-deep .mat-mdc-form-field-has-icon-suffix .mat-mdc-text-field-wrapper {
     width: 288px !important;
   }
@@ -223,10 +227,42 @@
       width: 288px;
     }
   }
-
+  .density-3-section {
+    padding-left: 0;
+  }
+  .form-group {
+    padding: 0;
+    &:nth-child(2) {
+      order: 2;
+    }
+    &:nth-child(3) {
+      order: 3;
+    }
+    &:nth-child(4) {
+      order: 7;
+    }
+    &:nth-child(5) {
+      order: 1;
+    }
+    &:nth-child(7) {
+      order: 5;
+    }
+  }
   .btn-block {
+    justify-content: center;
     button {
       width: 136px;
+      &:not(:last-child) {
+        margin: 0 0 15px !important;
+      }
+      &:last-child {
+        margin: 0 !important;
+      }
+    }
+    .btn-block__wrapper {
+      padding-left: 0;
+      display: flex;
+      flex-direction: column;
     }
   }
 }

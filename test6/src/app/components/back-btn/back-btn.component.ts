@@ -32,6 +32,12 @@ import { Location } from '@angular/common';
         @include font(1.8rem, 2.4rem, 700);
         color: $textDarkLight !important;
       }
+
+      @media (max-width: 600px) {
+        :host {
+          padding-left: 16px;
+        }
+      }
     `,
   ],
 })
