@@ -31,6 +31,7 @@ ng new contentchild --directory ./ --minimal
 8.  Проекция контента с помощью ng-content.
 9.  Атрибут директива. (colory)
 10. Структурная директива. (delay)
+11. Экспорт контроллера директивы. (exportAs [delay directive])
 
 </details>
 

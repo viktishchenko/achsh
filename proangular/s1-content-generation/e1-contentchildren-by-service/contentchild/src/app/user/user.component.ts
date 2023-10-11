@@ -14,10 +14,16 @@ import { BehaviorSubject } from "rxjs";
     <hr />
     <app-header></app-header>
     <div>
+      <span>user component:</span>
       <h1>
-        app directive: <span appColory> @HostBinding() </span>/
+        app directive: <span appColory #colory="colory"> @HostBinding() </span>/
         @HostListener()<span></span>
       </h1>
+      <button (click)="colory.setRandomColor()">random color</button>
+      <br />
+      <span>color: {{ colory.myColor }}</span
+      ><br />
+      <span>counter: {{ colory.counter }}</span>
     </div>
     <hr />
   `,
