@@ -1,0 +1,119 @@
+import { Component } from "@angular/core";
+
+@Component({
+  selector: "app-header",
+  template: `
+    <h1><u>Header comp</u></h1>
+    <h3>user: {{ user && user.name ? user.name : null }}</h3>
+    <h3>
+      This user was selected:
+      {{ selectedUserName ? selectedUserName : " - " }}
+    </h3>
+    <p
+      style="display: inline-block"
+      [class]="myclass"
+      [style.color]="myrandom"
+      [style.color]="mycolor"
+      [style.width.px]="mywidth"
+    >
+      <u>header works!</u>
+    </p>
+    <button (click)="changeColorByClick()">
+      {{ myrandom ? myrandom : "random color" }}
+    </button>
+    <br />
+    <label for="colorInput">Введите цвет:</label>
+    <input
+      id="colorInput"
+      #inputColor
+      style="display: block;"
+      type="text"
+      (input)="changeColor($event)"
+      (keyup.enter)="changeByClick(inputColor.value)"
+    />
+    <div class="space"></div>
+    <hr />
+    <app-user-card
+      [userName]="user && user.name ? user.name : null"
+      (passSelectedUser)="selectedUser($event)"
+    ></app-user-card>
+    <hr />
+    <div>
+      custom structural directive [Delay]:
+      <!-- <span *appDelay>app delay directive</span> -->
+      <div *ngFor="let delay of [1, 2, 3, 4, 5]">
+        <span *appDelay="delay">app delay directive {{ delay }}</span>
+        <!-- 
+          
+          <ng-template [appDelay]="delay"></ng-template>
+          <span>app delay directive {{ delay }}</span>
+          </ng-template></ng-template>
+
+         -->
+      </div>
+    </div>
+    <hr />
+  `,
+  styles: [
+    `
+      .db {
+        display: inline-block;
+      }
+      .gold {
+        color: gold;
+      }
+      .red {
+        color: red;
+      }
+      .green {
+        color: green;
+      }
+      .blue {
+        color: blue;
+      }
+      .space {
+        display: block;
+        width: 100%;
+        height: 1rem;
+      }
+    `,
+  ],
+})
+export class HeaderComponent {
+  myclass: string = "db";
+  mywidth: number = 100;
+  mycolor!: string;
+  user?: { name: string };
+  selectedUserName!: string | null;
+  myrandom?: string;
+
+  constructor() {
+    setTimeout(() => {
+      this.myclass = "green";
+    }, 2000);
+
+    setTimeout(() => {
+      this.user = {
+        name: "John",
+      };
+    }, 2000);
+  }
+
+  changeColor(event: Event) {
+    this.mycolor = (event.target as HTMLInputElement).value;
+  }
+
+  changeColorByClick() {
+    this.myclass = "blue";
+    this.myrandom = "#" + Math.floor(Math.random() * 16777215).toString();
+  }
+
+  changeByClick(color: string) {
+    console.log("color>>", color);
+    this.mycolor = color;
+  }
+
+  selectedUser(name: string) {
+    this.selectedUserName = name;
+  }
+}
