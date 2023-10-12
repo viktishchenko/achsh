@@ -1,13 +1,14 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
 
-import { AppComponent } from './app.component';
-import { UserComponent } from './user/user.component';
-import { HeaderComponent } from './header/header.component';
-import { UserCardComponent } from './header/user-card/user-card.component';
-import { ItemComponent } from './item/item.component';
-import { ColoryDirective } from './colory.directive';
-import { DelayDirective } from './delay.directive';
+import { AppComponent } from "./app.component";
+import { UserComponent } from "./user/user.component";
+import { HeaderComponent } from "./header/header.component";
+import { UserCardComponent } from "./header/user-card/user-card.component";
+import { ItemComponent } from "./item/item.component";
+import { ColoryDirective } from "./colory.directive";
+import { DelayDirective } from "./delay.directive";
+import { DynamicComponent } from "./dynamic/dynamic.component";
 
 @NgModule({
   declarations: [
@@ -17,12 +18,11 @@ import { DelayDirective } from './delay.directive';
     UserCardComponent,
     ItemComponent,
     ColoryDirective,
-    DelayDirective
+    DelayDirective,
+    DynamicComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

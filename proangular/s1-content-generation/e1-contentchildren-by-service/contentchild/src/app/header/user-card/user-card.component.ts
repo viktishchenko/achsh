@@ -10,29 +10,45 @@ import { UserComponent } from "src/app/user/user.component";
         {{ " " + userName }}</span
       >
     </h3>
-    <button (click)="showTitle()">
+    <button (click)="showUserName()">
       {{ isShown ? "Hide" : "Show" }} username
     </button>
     <h4>Select user:</h4>
-    <ul *ngFor="let user of users">
-      <li style="cursor: pointer;" (click)="selectUser(user.name)">
+    <ul>
+      <li
+        *ngFor="let user of users"
+        [class.selected]="user.name === selectedUser"
+        style="cursor: pointer;"
+        (click)="selectUser(user.name)"
+      >
         {{ user.name }}
       </li>
     </ul>
   `,
-  styles: [],
+  styles: [
+    `
+      .selected {
+        margin: 1rem;
+        padding: 5px 10px;
+        width: 100px;
+        background-color: #f2f2f2;
+      }
+    `,
+  ],
 })
 export class UserCardComponent {
   @Input()
   userName!: string | null | undefined;
   @Output() passSelectedUser = new EventEmitter<string>();
 
-  isShown = true;
+  isShown = false;
   users = [{ name: "John" }, { name: "Mike" }, { name: "Alice" }];
+
+  selectedUser?: string;
 
   constructor(private userComp: UserComponent) {}
 
-  showTitle() {
+  showUserName() {
     this.isShown = !this.isShown;
   }
 
@@ -40,5 +56,6 @@ export class UserCardComponent {
     console.log("selectUser: ", name);
     this.passSelectedUser.emit(name);
     this.userComp.setNameFromComponent(name);
+    this.selectedUser = name;
   }
 }

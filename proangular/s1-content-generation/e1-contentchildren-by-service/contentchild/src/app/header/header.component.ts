@@ -1,9 +1,28 @@
-import { Component } from "@angular/core";
+import {
+  Component,
+  ComponentRef,
+  ViewChild,
+  ViewContainerRef,
+} from "@angular/core";
+import { DynamicComponent } from "../dynamic/dynamic.component";
 
 @Component({
   selector: "app-header",
   template: `
     <h1><u>Header comp</u></h1>
+    <div class="buttons-container">
+      <button
+        [style.marginRight.px]="20"
+        class="show-btn"
+        (click)="showDynamicComponent()"
+      >
+        Show component
+      </button>
+      <button class="remove-btn" (click)="removeDynamicComponent()">
+        Remove component
+      </button>
+    </div>
+    <ng-template #dynamic></ng-template>
     <h3>user: {{ user && user.name ? user.name : null }}</h3>
     <h3>
       This user was selected:
@@ -22,13 +41,13 @@ import { Component } from "@angular/core";
       {{ myrandom ? myrandom : "random color" }}
     </button>
     <br />
-    <label for="colorInput">Введите цвет:</label>
+    <label for="colorInput">Введите цвет: → Enter</label>
+    <!-- (input)="changeColor($event)" -->
     <input
       id="colorInput"
       #inputColor
       style="display: block;"
       type="text"
-      (input)="changeColor($event)"
       (keyup.enter)="changeByClick(inputColor.value)"
     />
     <div class="space"></div>
@@ -41,7 +60,7 @@ import { Component } from "@angular/core";
     <div>
       custom structural directive [Delay]:
       <!-- <span *appDelay>app delay directive</span> -->
-      <div *ngFor="let delay of [1, 2, 3, 4, 5]">
+      <div *ngFor="let delay of [1, 2, 3]">
         <span *appDelay="delay">app delay directive {{ delay }}</span>
         <!-- 
           
@@ -87,6 +106,10 @@ export class HeaderComponent {
   selectedUserName!: string | null;
   myrandom?: string;
 
+  @ViewChild("dynamic", { read: ViewContainerRef })
+  private viewRef: ViewContainerRef | undefined;
+  private componentRef: ComponentRef<DynamicComponent> | undefined;
+
   constructor() {
     setTimeout(() => {
       this.myclass = "green";
@@ -99,9 +122,9 @@ export class HeaderComponent {
     }, 2000);
   }
 
-  changeColor(event: Event) {
-    this.mycolor = (event.target as HTMLInputElement).value;
-  }
+  // changeColor(event: Event) {
+  //   this.mycolor = (event.target as HTMLInputElement).value;
+  // }
 
   changeColorByClick() {
     this.myclass = "blue";
@@ -115,5 +138,13 @@ export class HeaderComponent {
 
   selectedUser(name: string) {
     this.selectedUserName = name;
+  }
+
+  showDynamicComponent() {
+    this.viewRef?.clear();
+    this.componentRef = this.viewRef?.createComponent(DynamicComponent);
+  }
+  removeDynamicComponent() {
+    this.viewRef?.clear();
   }
 }

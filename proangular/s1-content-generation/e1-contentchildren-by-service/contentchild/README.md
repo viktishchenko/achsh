@@ -25,3 +25,24 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+<detail>
+
+<summary> <a name="screencast"></a>скринкаст по ангуляр</summary>
+
+1.  [init →](./pic.md#init)
+2.  [Вывод переменных →](./pic.md#intropolation)
+3.  [Динамическое изменение свойств эл-та →](./pic.md#compDynamicProperty)
+4.  [Обработка событий →](./pic.md#eventHandling)
+5.  [Работа с эл-ми по ссылке](./pic.md#workWithElemByRef)
+6.  [Передача данных в компонент инпут декоратор →](./pic.md#transferDataToComponent)
+7.  [Директивы *ngIf, *ngFor →](./pic.md#ngIf&ngForDirectives)
+8.  [Вывод событий из компонетна (child-parent any-any) →](./pic.md#outputEventsFromComp)
+9.  [Подсветка выделенного элемента →](./pic.md#highlightSelectedValue)
+10. [Проекция контента с помощью ng-content →](./pic.md#contentProjection)
+11. [Атрибут директива →](./pic.md.md#attributeDirective) (colory)
+12. [Структурная директива →](./pic.md#customDirective) (delay)
+13. Экспорт контроллера директивы. (exportAs [delay directive])
+14. Динамический компонент.
+
+</detail>

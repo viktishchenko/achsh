@@ -17,7 +17,7 @@ export class ColoryDirective {
 
   setRandomColor() {
     this.counter++;
-    this.myColor = "#" + Math.floor(Math.random() * 16777215).toString();
+    this.myColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
   }
 
   constructor() {
