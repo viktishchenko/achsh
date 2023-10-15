@@ -122,7 +122,7 @@ export class HeaderComponent {
 
   changeColorByClick() {
     this.myclass = "blue";
-    this.myrandom = "#" + Math.floor(Math.random() * 16777215).toString();
+    this.myrandom = "#" + Math.floor(Math.random() * 16777215).toString(16);
   }
 
   changeByClick(color: string) {

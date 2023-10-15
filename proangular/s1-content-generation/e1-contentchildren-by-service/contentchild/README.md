@@ -44,5 +44,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 12. [Структурная директива →](./pic.md#customDirective) (delay)
 13. [Экспорт контроллера директивы →](./pic.md#directiveControllerExport) (exportAs [colory directive])
 14. [Динамический компонент →](./pic.md#dynamicComponent)
+15. [Сервисы, внедрение зависимостей, создание, использование →](./pic.md#useServiceBasics)
 
 </detail>

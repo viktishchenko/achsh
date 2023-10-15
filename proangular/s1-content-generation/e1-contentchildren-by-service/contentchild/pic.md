@@ -105,3 +105,11 @@
 ![Alt text][def12]
 
 [def12]: readmeAssets/dynamicComponent.png
+
+---
+
+14. <a name="useServiceBasics"></a> Сервисы, внедрение зависимостей, создание, использование:
+
+![Alt text][def13]
+
+[def13]: readmeAssets/useServiceBasics.png

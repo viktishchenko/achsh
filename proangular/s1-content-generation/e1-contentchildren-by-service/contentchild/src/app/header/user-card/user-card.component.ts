@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { UsersService } from "src/app/service/users.service";
 import { UserComponent } from "src/app/user/user.component";
 
 @Component({
@@ -36,17 +37,24 @@ import { UserComponent } from "src/app/user/user.component";
     `,
   ],
 })
-export class UserCardComponent {
+export class UserCardComponent implements OnInit {
   @Input()
   userName!: string | null | undefined;
   @Output() passSelectedUser = new EventEmitter<string>();
 
   isShown = false;
-  users = [{ name: "John" }, { name: "Mike" }, { name: "Alice" }];
+  users: { name: string }[] | undefined;
 
   selectedUser?: string;
 
-  constructor(private userComp: UserComponent) {}
+  constructor(
+    private userComp: UserComponent,
+    private getUsers: UsersService
+  ) {}
+
+  ngOnInit(): void {
+    this.users = this.getUsers.getAllUsers();
+  }
 
   showUserName() {
     this.isShown = !this.isShown;
