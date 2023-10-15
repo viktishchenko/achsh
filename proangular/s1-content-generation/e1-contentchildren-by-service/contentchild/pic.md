@@ -89,3 +89,11 @@
 ![Alt text][def11]
 
 [def11]: readmeAssets/customDirective.png
+
+---
+
+13. <a name="directiveControllerExport"></a> Экспорт контроллера директивы (Передача методов и данных в компонент):
+
+![Alt text][def12]
+
+[def12]: readmeAssets/directiveControllerExport.png

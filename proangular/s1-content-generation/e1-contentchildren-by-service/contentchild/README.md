@@ -42,7 +42,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 10. [Проекция контента с помощью ng-content →](./pic.md#contentProjection)
 11. [Атрибут директива →](./pic.md.md#attributeDirective) (colory)
 12. [Структурная директива →](./pic.md#customDirective) (delay)
-13. Экспорт контроллера директивы. (exportAs [delay directive])
+13. [Экспорт контроллера директивы →](readmeAssets/directiveControllerExport.png) (exportAs [colory directive])
 14. Динамический компонент.
 
 </detail>
