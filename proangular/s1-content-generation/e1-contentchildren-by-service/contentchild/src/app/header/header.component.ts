@@ -11,15 +11,8 @@ import { DynamicComponent } from "../dynamic/dynamic.component";
   template: `
     <h1><u>Header comp</u></h1>
     <div class="buttons-container">
-      <button
-        [style.marginRight.px]="20"
-        class="show-btn"
-        (click)="showDynamicComponent()"
-      >
-        Show component
-      </button>
-      <button class="remove-btn" (click)="removeDynamicComponent()">
-        Remove component
+      <button class="toggle-btn" (click)="toggleDynamicComponent()">
+        {{ toggleDynamicComp ? "Show" : "Hide" }} dynamic component
       </button>
     </div>
     <ng-template #dynamic></ng-template>
@@ -109,6 +102,7 @@ export class HeaderComponent {
   @ViewChild("dynamic", { read: ViewContainerRef })
   private viewRef: ViewContainerRef | undefined;
   private componentRef: ComponentRef<DynamicComponent> | undefined;
+  toggleDynamicComp: boolean = true;
 
   constructor() {
     setTimeout(() => {
@@ -140,11 +134,14 @@ export class HeaderComponent {
     this.selectedUserName = name;
   }
 
-  showDynamicComponent() {
-    this.viewRef?.clear();
-    this.componentRef = this.viewRef?.createComponent(DynamicComponent);
-  }
-  removeDynamicComponent() {
-    this.viewRef?.clear();
+  toggleDynamicComponent() {
+    if (this.toggleDynamicComp) {
+      this.viewRef?.clear();
+      this.componentRef = this.viewRef?.createComponent(DynamicComponent);
+    }
+    if (!this.toggleDynamicComp) {
+      this.viewRef?.clear();
+    }
+    this.toggleDynamicComp = !this.toggleDynamicComp;
   }
 }

@@ -97,3 +97,11 @@
 ![Alt text][def12]
 
 [def12]: readmeAssets/directiveControllerExport.png
+
+---
+
+14. <a name="dynamicComponent"></a> Динамический компонент:
+
+![Alt text][def12]
+
+[def12]: readmeAssets/dynamicComponent.png
