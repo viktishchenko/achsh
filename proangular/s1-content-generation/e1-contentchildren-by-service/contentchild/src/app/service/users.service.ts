@@ -13,9 +13,9 @@ export class UsersService {
   }
 
   deleteUser(name: string) {
-    return this.getAllUsers().filter((user) => {
-      user.name !== name;
-    });
+    return (this.users = this.getAllUsers().filter(
+      (user) => user.name !== name
+    ));
   }
 
   addUser(name: string) {

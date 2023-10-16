@@ -14,7 +14,7 @@ import { UserComponent } from "src/app/user/user.component";
     <button (click)="showUserName()">
       {{ isShown ? "Hide" : "Show" }} username
     </button>
-    <h4>Select user:</h4>
+    <h4>Select, remove or add new user:</h4>
     <ul>
       <li
         class="user-list"
@@ -32,6 +32,14 @@ import { UserComponent } from "src/app/user/user.component";
         </button>
       </li>
     </ul>
+    <input
+      type="text"
+      #userNameEl
+      (keydown.enter)="addUser(userNameEl.value); userNameEl.value = ''"
+    />
+    <button (click)="addUser(userNameEl.value); userNameEl.value = ''">
+      add user
+    </button>
   `,
   styles: [
     `
@@ -93,6 +101,15 @@ export class UserCardComponent implements OnInit {
   }
 
   removeUser(name: string) {
-    console.log("name-to-remove>>", name);
+    this.getUsers.deleteUser(name);
+    this.users = this.getUsers.getAllUsers();
+  }
+
+  addUser(name: string) {
+    if (!name) {
+      return;
+    }
+    this.getUsers.addUser(name);
+    this.users = this.getUsers.getAllUsers();
   }
 }

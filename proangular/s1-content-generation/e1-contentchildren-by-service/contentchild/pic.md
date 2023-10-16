@@ -113,3 +113,11 @@
 ![Alt text][def13]
 
 [def13]: readmeAssets/useServiceBasics.png
+
+---
+
+15. <a name="basicCRUD"></a> Сервисы, внедрение зависимостей, базовый CRUD:
+
+![Alt text][def14]
+
+[def14]: readmeAssets/basicCRUD.png
