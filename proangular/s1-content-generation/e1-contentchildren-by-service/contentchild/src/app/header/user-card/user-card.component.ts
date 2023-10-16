@@ -17,21 +17,46 @@ import { UserComponent } from "src/app/user/user.component";
     <h4>Select user:</h4>
     <ul>
       <li
+        class="user-list"
         *ngFor="let user of users"
         [class.selected]="user.name === selectedUser"
         style="cursor: pointer;"
         (click)="selectUser(user.name)"
       >
         {{ user.name }}
+        <button
+          (click)="removeUser(user.name); $event.stopImmediatePropagation()"
+          class="remove-btn"
+        >
+          x
+        </button>
       </li>
     </ul>
   `,
   styles: [
     `
-      .selected {
+      .user-list {
         margin: 1rem;
-        padding: 5px 10px;
-        width: 100px;
+        position: relative;
+        width: 30%;
+        background-color: transparent;
+        padding: 5px;
+        border: 1px solid gray;
+        border-radius: 5px;
+      }
+      .remove-btn {
+        position: absolute;
+        top: -12px;
+        right: -10px;
+        border: 1px solid red;
+        border-radius: 50%;
+        padding: 2px 7px;
+        background-color: white;
+        color: red;
+      }
+      .selected {
+        /* padding: 5px 10px;
+        width: 100px; */
         background-color: #f2f2f2;
       }
     `,
@@ -65,5 +90,9 @@ export class UserCardComponent implements OnInit {
     this.passSelectedUser.emit(name);
     this.userComp.setNameFromComponent(name);
     this.selectedUser = name;
+  }
+
+  removeUser(name: string) {
+    console.log("name-to-remove>>", name);
   }
 }
