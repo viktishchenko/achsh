@@ -46,5 +46,28 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 14. [Динамический компонент →](./pic.md#dynamicComponent)
 15. [Сервисы, внедрение зависимостей, создание, использование →](./pic.md#useServiceBasics)
 16. [Сервисы, внедрение зависимостей, базовый CRUD →](./pic.md#basicCRUD)
+<details>
 
-</detail>
+<summary>add environments</summary>
+
+```js
+
+npm i json-server
+npm i concurrently
+
+// server → db.json
+
+// package.json
+
+    "server": "json-server server/db.json",
+    "server:all": "concurrently \"npm run server\" \"ng serve\"",
+
+// add environments
+
+ng generate environments
+
+```
+
+</details>
+
+</details>

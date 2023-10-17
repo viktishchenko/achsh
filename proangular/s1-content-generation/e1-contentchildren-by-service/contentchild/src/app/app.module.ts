@@ -9,6 +9,7 @@ import { ItemComponent } from "./item/item.component";
 import { ColoryDirective } from "./colory.directive";
 import { DelayDirective } from "./delay.directive";
 import { DynamicComponent } from "./dynamic/dynamic.component";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { DynamicComponent } from "./dynamic/dynamic.component";
     DelayDirective,
     DynamicComponent,
   ],
-  imports: [BrowserModule],
+  imports: [BrowserModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -1,4 +1,13 @@
-import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+} from "@angular/core";
+import { Subscription } from "rxjs";
+import { IUsers } from "src/app/models/users";
 import { UsersService } from "src/app/service/users.service";
 import { UserComponent } from "src/app/user/user.component";
 
@@ -18,28 +27,30 @@ import { UserComponent } from "src/app/user/user.component";
     <ul>
       <li
         class="user-list"
+        style="cursor: pointer;"
         *ngFor="let user of users"
         [class.selected]="user.name === selectedUser"
-        style="cursor: pointer;"
         (click)="selectUser(user.name)"
       >
         {{ user.name }}
         <button
-          (click)="removeUser(user.name); $event.stopImmediatePropagation()"
           class="remove-btn"
+          (click)="removeUser(user.name); $event.stopImmediatePropagation()"
         >
           x
         </button>
       </li>
     </ul>
-    <input
+    <input type="text" #userNameEl />
+    <button>add user</button>
+    <!-- <input
       type="text"
       #userNameEl
       (keydown.enter)="addUser(userNameEl.value); userNameEl.value = ''"
     />
     <button (click)="addUser(userNameEl.value); userNameEl.value = ''">
       add user
-    </button>
+    </button> -->
   `,
   styles: [
     `
@@ -70,15 +81,17 @@ import { UserComponent } from "src/app/user/user.component";
     `,
   ],
 })
-export class UserCardComponent implements OnInit {
+export class UserCardComponent implements OnInit, OnDestroy {
   @Input()
   userName!: string | null | undefined;
   @Output() passSelectedUser = new EventEmitter<string>();
 
   isShown = false;
-  users: { name: string }[] | undefined;
+  users!: IUsers[];
 
   selectedUser?: string;
+  errorMessage: string = "";
+  sub!: Subscription;
 
   constructor(
     private userComp: UserComponent,
@@ -86,7 +99,13 @@ export class UserCardComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.users = this.getUsers.getAllUsers();
+    this.getUsers.getAllUsers().subscribe({
+      next: (users) => {
+        this.users = users;
+      },
+
+      error: (err) => (this.errorMessage = err),
+    });
   }
 
   showUserName() {
@@ -101,15 +120,20 @@ export class UserCardComponent implements OnInit {
   }
 
   removeUser(name: string) {
-    this.getUsers.deleteUser(name);
-    this.users = this.getUsers.getAllUsers();
+    // this.getUsers.deleteUser(name);
+    // this.users = this.getUsers.getAllUsers();
+    console.log("REMOVE THIS name>>", name);
   }
 
-  addUser(name: string) {
-    if (!name) {
-      return;
-    }
-    this.getUsers.addUser(name);
-    this.users = this.getUsers.getAllUsers();
+  // addUser(name: string) {
+  //   if (!name) {
+  //     return;
+  //   }
+  //   this.getUsers.addUser(name);
+  //   this.users = this.getUsers.getAllUsers();
+  // }
+
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
   }
 }
